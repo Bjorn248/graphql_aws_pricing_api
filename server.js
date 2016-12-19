@@ -15,6 +15,8 @@ var http = require('http');
 
 var app = express();
 
+// TODO Figure out why this uses such an insane amount of memory...
+
 mariaDBHost = process.env.MARIADB_HOST || "localhost";
 mariaDBUser = process.env.MARIADB_USER || "pricer";
 mariaDBPass = process.env.MARIADB_PASSWORD || "prices123";
@@ -40,9 +42,6 @@ files.forEach(function(file) {
     sharedVariables[tableName] = sequelize.import("./models/" + file);
     sharedVariables[tableName].removeAttribute('id');
 });
-
-
-// TODO Make this init all GraphQL Types and Schema
 
 function generateResolveFunction(tableName, fieldName) {
     return (model) => {
