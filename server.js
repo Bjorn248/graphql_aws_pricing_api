@@ -107,8 +107,10 @@ function getTables(pool, GraphQLObjectMap, callback) {
                 callback(err);
             }
 
+            var keyName = "Tables_in_" + mariaDBName;
+
             tables.forEach(function(table) {
-                tableName = table.Tables_in_aws_prices;
+                tableName = table[keyName];
                 GraphQLObjectMap[tableName] = {};
             });
 
