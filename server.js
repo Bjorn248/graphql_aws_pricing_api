@@ -12,7 +12,6 @@ var {
     GraphQLList,
     GraphQLNonNull
 } = require('graphql');
-var walkSync = require('walk-sync');
 var http = require('http');
 
 var app = express();
@@ -178,7 +177,7 @@ waterfallTasks.push(
 
 waterfallTasks.push(
     function(pool, GraphQLObjectMap, cb) {
-        getColumns(pool, GraphQLObjectMap, function(err) {
+        getColumns(pool, GraphQLObjectMap, function(err, GraphQLObjectMap) {
             if (err) {
                 console.error("Error getting tables from mysql");
             }
@@ -189,7 +188,7 @@ waterfallTasks.push(
 
 waterfallTasks.push(
     function(GraphQLObjectMap, cb) {
-        generateQueryMap(GraphQLObjectMap, GraphQLQueryMap, function(err) {
+        generateQueryMap(GraphQLObjectMap, GraphQLQueryMap, function(err, GraphQLObjectMap, GraphQLQueryMap) {
             if (err) {
                 console.error("Error getting tables from mysql");
             }
