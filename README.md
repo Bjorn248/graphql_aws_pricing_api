@@ -25,7 +25,7 @@ Then, simply start the application using `yarn start`
 ## Usage
 GraphiQL is enabled by default. This should be disabled in non-development environments.
 
-An example query might look like this
+An example query string might look like this
 
 ```
 {
@@ -43,4 +43,26 @@ WHERE  `TermType` = 'OnDemand'
        AND `Location` = 'US East (N. Virginia)'
        AND `InstanceType` = 't2.small'
        AND `OS` = 'Linux';
+```
+
+A full example HTTP request might look like this
+```
+{
+  "query": "{\n  AmazonEC2(TermType:\"OnDemand\", Location:\"US East (N. Virginia)\", OS:\"Linux\", InstanceType:\"t2.small\") {\n    PricePerUnit\n  }\n}",
+  "variables": null,
+  "operationName": null
+}
+```
+
+An example response might look like this
+```
+{
+  "data": {
+    "AmazonEC2": [
+      {
+        "PricePerUnit": "0.023"
+      }
+    ]
+  }
+}
 ```

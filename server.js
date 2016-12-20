@@ -214,7 +214,7 @@ async.waterfall(waterfallTasks, function (err, result) {
     app.use('/graphql', graphqlHTTP({
         schema: Schema,
         pretty: true,
-        graphiql: true,
+        graphiql: process.env.NODE_ENV !== 'production'
     }));
     app.listen(4000);
     console.log('Running a GraphQL API server at localhost:4000/graphql');
