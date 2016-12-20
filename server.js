@@ -73,6 +73,7 @@ function generateQueryFunction(poolPromise, tableName) {
         }
         queryIdentifiers.unshift(selectionColumns);
         queryString = mysql.format(queryString, queryIdentifiers);
+        console.log(queryString);
         return poolPromise.query(queryString);
     };
 }
@@ -198,6 +199,7 @@ waterfallTasks.push(
 );
 
 async.waterfall(waterfallTasks, function (err, result) {
+    pool.end();
     var Query = new GraphQLObjectType({
         name: 'Query',
         description: 'Root query object',
