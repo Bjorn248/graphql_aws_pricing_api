@@ -8,6 +8,6 @@
     "promise-mysql": "^3.0.0"
   },
   "scripts": {
-    "start": "node --max-old-space-size=4076 server.js"
+    "start": "node --max-old-space-size=4096 server.js"
   }
 }
