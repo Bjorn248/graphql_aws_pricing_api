@@ -181,7 +181,7 @@ waterfallTasks.push(
     function(pool, GraphQLObjectMap, cb) {
         getColumns(pool, GraphQLObjectMap, function(err, GraphQLObjectMap) {
             if (err) {
-                console.error("Error getting tables from mysql");
+                console.error("Error getting columns from mysql");
             }
             cb(err, GraphQLObjectMap);
         });
@@ -192,7 +192,7 @@ waterfallTasks.push(
     function(GraphQLObjectMap, cb) {
         generateQueryMap(GraphQLObjectMap, GraphQLQueryMap, function(err, GraphQLObjectMap, GraphQLQueryMap) {
             if (err) {
-                console.error("Error getting tables from mysql");
+                console.error("Error generating query map");
             }
             cb(err, GraphQLObjectMap, GraphQLQueryMap);
         });
@@ -200,6 +200,10 @@ waterfallTasks.push(
 );
 
 async.waterfall(waterfallTasks, function (err, result) {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    }
     pool.end();
     var Query = new GraphQLObjectType({
         name: 'Query',
