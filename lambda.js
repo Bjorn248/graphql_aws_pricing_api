@@ -207,7 +207,6 @@ exports.handler = (event, context, lambdaCallback) => {
             query: Query
         });
 
-        console.log(JSON.stringify(event));
         graphql(Schema, JSON.parse(event.body).query).then(result => {
 
             poolPromise.end();
