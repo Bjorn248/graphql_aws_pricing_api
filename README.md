@@ -29,7 +29,7 @@ An example query string might look like this
 
 ```
 {
-  AmazonEC2(TermType:"OnDemand", Location:"US East (N. Virginia)", OS:"Linux", InstanceType:"t2.small") {
+  AmazonEC2(TermType:"OnDemand", Location:"US East (N. Virginia)", OS:"Linux", InstanceType:"m3.medium", Tenancy:"Shared") {
     PricePerUnit
   }
 }
@@ -41,14 +41,15 @@ SELECT `PricePerUnit`
 FROM   `AmazonEC2`
 WHERE  `TermType` = 'OnDemand'
        AND `Location` = 'US East (N. Virginia)'
-       AND `InstanceType` = 't2.small'
+       AND `InstanceType` = 'm3.medium'
+       AND `Tenancy` = 'Shared'
        AND `OS` = 'Linux';
 ```
 
 A full example HTTP request might look like this
 ```
 {
-  "query": "{\n  AmazonEC2(TermType:\"OnDemand\", Location:\"US East (N. Virginia)\", OS:\"Linux\", InstanceType:\"t2.small\") {\n    PricePerUnit\n  }\n}",
+  "query": "{\n  AmazonEC2(TermType:\"OnDemand\", Location:\"US East (N. Virginia)\", OS:\"Linux\", InstanceType:\"m3.medium\", Tenancy:\"Shared\") {\n    PricePerUnit\n  }\n}",
   "variables": null,
   "operationName": null
 }
@@ -60,7 +61,7 @@ An example response might look like this
   "data": {
     "AmazonEC2": [
       {
-        "PricePerUnit": "0.023"
+        "PricePerUnit": "0.067"
       }
     ]
   }
