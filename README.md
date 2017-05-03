@@ -46,7 +46,7 @@ WHERE  `TermType` = 'OnDemand'
        AND `OS` = 'Linux';
 ```
 
-A full example HTTP request might look like this
+A full example HTTP POST request might look like this
 ```
 {
   "query": "{\n  AmazonEC2(TermType:\"OnDemand\", Location:\"US East (N. Virginia)\", OS:\"Linux\", InstanceType:\"m3.medium\", Tenancy:\"Shared\") {\n    PricePerUnit\n  }\n}",
