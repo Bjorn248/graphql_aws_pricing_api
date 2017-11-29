@@ -1,30 +1,14 @@
 # graphql_aws_pricing_api
 AWS Pricing API. The idea was to use this to power terraform-cashier (my next project).
 
-## Pre-Requisites
-In order to run this API, you must first have a MariaDB instance that has been populated using
-[this python script](https://github.com/Bjorn248/aws_pricing_data_ingestor). If you have not done so already,
-please run this script pointing at your MariaDB instance to populate it.
+# Usage of public endpoint
 
-## Environment Variables
-Variable Name | Description
------------- | -------------
-MARIADB_HOST | The hostname/ip of your MariaDB Instance (e.g. localhost)
-MARIADB_USER | The user with which to authenticate to MariaDB
-MARIADB_PASSWORD | The password with which to authenticate to MariaDB
-MARIADB_DB | The DB name to connect to (e.g. aws_prices)
+This code is being run on lambda and can be accessed via the following endpoint:
+[https://fvaexi95f8.execute-api.us-east-1.amazonaws.com/Dev/graphql/](https://fvaexi95f8.execute-api.us-east-1.amazonaws.com/Dev/graphql/)
 
-## Instructions
-To run this API, make sure you have all environment variables set and have
-a target MariaDB database running.
-
-To install any required dependencies please run `yarn install`
-
-Then, simply start the application using `yarn start`
+Because of the warmup behavior of Lambda, please give the first call some time (usually around 10-15 seconds) to warm-up.
 
 ## Usage
-GraphiQL is enabled by default. This should be disabled in non-development environments.
-
 An example query string might look like this
 
 ```
@@ -67,6 +51,63 @@ An example response might look like this
   }
 }
 ```
+
+Here's a working curl you can use to test the above request query
+```
+curl -H "Content-Type: application/json" -X POST -d '{"query":"{ t2_xlarge_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.xlarge\", OS:\"Linux\", Tenancy:\"Shared\") {PricePerUnit Unit Currency} t2_medium_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.medium\", OS:\"Linux\", Tenancy:\"Shared\") {PricePerUnit Unit Currency}}","variables":"","operationName":""}' https://fvaexi95f8.execute-api.us-east-1.amazonaws.com/Dev/graphql/
+```
+
+## Aliases
+[GraphQL Aliases](http://graphql.org/learn/queries/#aliases) can be taken advantage of to retreive multiple pieces of pricing data at once.
+For example:
+```
+{"query":"{ t2_xlarge_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.xlarge\", OS:\"Linux\", Tenancy:\"Shared\") {PricePerUnit Unit Currency} t2_medium_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.medium\", OS:\"Linux\", Tenancy:\"Shared\") {PricePerUnit Unit Currency}}","variables":"","operationName":""}
+```
+
+The response for the above query should look like this:
+```
+{
+    "data": {
+        "t2_xlarge_Shared": [
+            {
+                "PricePerUnit": "0.2208",
+                "Unit": "Hrs",
+                "Currency": "USD"
+            }
+        ],
+        "t2_medium_Shared": [
+            {
+                "PricePerUnit": "0.0552",
+                "Unit": "Hrs",
+                "Currency": "USD"
+            }
+        ]
+    }
+}
+```
+
+# Local Development
+
+## Pre-Requisites
+In order to run this API, you must first have a MariaDB instance that has been populated using
+[this python script](https://github.com/Bjorn248/aws_pricing_data_ingestor). If you have not done so already,
+please run this script pointing at your MariaDB instance to populate it.
+
+## Environment Variables
+Variable Name | Description
+------------ | -------------
+MARIADB_HOST | The hostname/ip of your MariaDB Instance (e.g. localhost)
+MARIADB_USER | The user with which to authenticate to MariaDB
+MARIADB_PASSWORD | The password with which to authenticate to MariaDB
+MARIADB_DB | The DB name to connect to (e.g. aws_prices)
+
+## Instructions
+To run this API locally, make sure you have all environment variables set and have
+a target MariaDB database running.
+
+To install any required dependencies please run `yarn install`
+
+Then, simply start the application using `yarn start`
 
 ## GraphQL Data Types
 ### AWSBudgets
@@ -153,6 +194,7 @@ LocationType  |  String
 UsageType  |  String
 Operation  |  String
 DeploymentLocation  |  String
+serviceName  |  String
 ### AWSCodePipeline
 Field | Type
 ----- | ----
@@ -300,6 +342,7 @@ Operation  |  String
 DeviceOS  |  String
 ExecutionMode  |  String
 MeterMode  |  String
+serviceName  |  String
 ### AWSDirectConnect
 Field | Type
 ----- | ----
@@ -326,6 +369,7 @@ ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
 DirectConnectLocation  |  String
+GeoRegionCode  |  String
 PortSpeed  |  String
 serviceName  |  String
 Version  |  String
@@ -354,6 +398,28 @@ Operation  |  String
 DirectorySize  |  String
 DirectoryType  |  String
 DirectoryTypeDescription  |  String
+serviceName  |  String
+### AWSEvents
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+ProductFamily  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+UsageType  |  String
+Operation  |  String
+EventType  |  String
 serviceName  |  String
 ### AWSGlue
 Field | Type
@@ -450,6 +516,7 @@ ToLocation  |  String
 ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
+serviceName  |  String
 ### AWSQueueService
 Field | Type
 ----- | ----
@@ -481,6 +548,7 @@ Operation  |  String
 MessageDeliveryFrequency  |  String
 MessageDeliveryOrder  |  String
 QueueType  |  String
+serviceName  |  String
 ### AWSServiceCatalog
 Field | Type
 ----- | ----
@@ -786,6 +854,7 @@ UsageType  |  String
 Operation  |  String
 CallingType  |  String
 Country  |  String
+serviceName  |  String
 ### AmazonCloudDirectory
 Field | Type
 ----- | ----
@@ -894,6 +963,7 @@ AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
 AlarmType  |  String
+serviceName  |  String
 Version  |  String
 ### AmazonCognito
 Field | Type
@@ -916,6 +986,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
+serviceName  |  String
 ### AmazonCognitoSync
 Field | Type
 ----- | ----
@@ -1014,6 +1085,7 @@ ToLocation  |  String
 ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
+serviceName  |  String
 ### AmazonEC2
 Field | Type
 ----- | ----
@@ -1067,14 +1139,20 @@ UsageType  |  String
 Operation  |  String
 DedicatedEBSThroughput  |  String
 ECU  |  String
+ElasticGPUType  |  String
 EnhancedNetworkingSupported  |  String
 GPU  |  String
+GPUMemory  |  String
 InstanceCapacity10xLarge  |  String
+InstanceCapacity12xlarge  |  String
 InstanceCapacity16xlarge  |  String
+InstanceCapacity18xlarge  |  String
+InstanceCapacity24xlarge  |  String
 InstanceCapacity2xLarge  |  String
 InstanceCapacity32xlarge  |  String
 InstanceCapacity4xLarge  |  String
 InstanceCapacity8xLarge  |  String
+InstanceCapacity9xlarge  |  String
 InstanceCapacityLarge  |  String
 InstanceCapacityMedium  |  String
 InstanceCapacityxLarge  |  String
@@ -1225,6 +1303,7 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
+serviceName  |  String
 ### AmazonGameLift
 Field | Type
 ----- | ----
@@ -1293,6 +1372,28 @@ ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
 Durability  |  String
+serviceName  |  String
+### AmazonGuardDuty
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+ProductFamily  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+AWSGroup  |  String
+UsageType  |  String
+Operation  |  String
 serviceName  |  String
 ### AmazonInspector
 Field | Type
@@ -1657,6 +1758,7 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
+serviceName  |  String
 ### AmazonRoute53
 Field | Type
 ----- | ----
@@ -1780,6 +1882,7 @@ ToLocation  |  String
 ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
+serviceName  |  String
 ### AmazonSWF
 Field | Type
 ----- | ----
