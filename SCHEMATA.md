@@ -25,6 +25,7 @@ Operation  |  String
 
 <details>
 <summary>AWSCloudTrail</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -49,6 +50,7 @@ serviceName  |  String
 
 <details>
 <summary>AWSCodeCommit</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -73,6 +75,7 @@ Operation  |  String
 
 <details>
 <summary>AWSCodeDeploy</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -98,6 +101,7 @@ serviceName  |  String
 
 <details>
 <summary>AWSCodePipeline</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -123,6 +127,7 @@ Operation  |  String
 
 <details>
 <summary>AWSConfig</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -147,6 +152,7 @@ serviceName  |  String
 
 <details>
 <summary>AWSDatabaseMigrationSvc</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -195,6 +201,7 @@ serviceName  |  String
 
 <details>
 <summary>AWSDeveloperSupport</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -233,6 +240,7 @@ WhoCanOpenCases  |  String
 
 <details>
 <summary>AWSDeviceFarm</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -261,6 +269,7 @@ serviceName  |  String
 
 <details>
 <summary>AWSDirectConnect</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -295,6 +304,7 @@ VirtualInterfaceType  |  String
 
 <details>
 <summary>AWSDirectoryService</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -323,6 +333,7 @@ serviceName  |  String
 
 <details>
 <summary>AWSEvents</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -348,6 +359,7 @@ serviceName  |  String
 
 <details>
 <summary>AWSGlue</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -373,6 +385,7 @@ Operation  |  String
 
 <details>
 <summary>AWSGreengrass</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -398,6 +411,7 @@ TenancySupport  |  String
 
 <details>
 <summary>AWSIoT</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -424,6 +438,7 @@ Protocol  |  String
 
 <details>
 <summary>AWSLambda</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -456,6 +471,7 @@ serviceName  |  String
 
 <details>
 <summary>AWSQueueService</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -491,6 +507,7 @@ serviceName  |  String
 
 <details>
 <summary>AWSServiceCatalog</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -515,6 +532,7 @@ WithActiveUsers  |  String
 
 <details>
 <summary>AWSShield</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -543,6 +561,7 @@ Operation  |  String
 
 <details>
 <summary>AWSStorageGateway</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -579,6 +598,7 @@ Version  |  String
 
 <details>
 <summary>AWSSupportBusiness</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -617,6 +637,7 @@ WhoCanOpenCases  |  String
 
 <details>
 <summary>AWSSupportEnterprise</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -655,6 +676,7 @@ WhoCanOpenCases  |  String
 
 <details>
 <summary>AWSXRay</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -681,6 +703,7 @@ Operation  |  String
 
 <details>
 <summary>AlexaTopSites</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -704,6 +727,7 @@ Operation  |  String
 
 <details>
 <summary>AlexaWebInfoService</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -727,6 +751,7 @@ Operation  |  String
 
 <details>
 <summary>AmazonApiGateway</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -757,6 +782,7 @@ CacheMemorySizeGB  |  String
 
 <details>
 <summary>AmazonAthena</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -783,6 +809,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonChime</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -807,6 +834,7 @@ LicenseType  |  String
 
 <details>
 <summary>AmazonChimeDialin</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -833,6 +861,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonCloudDirectory</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -861,6 +890,7 @@ Operation  |  String
 
 <details>
 <summary>AmazonCloudFront</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -893,6 +923,7 @@ RequestType  |  String
 
 <details>
 <summary>AmazonCloudSearch</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -925,6 +956,7 @@ CloudSearchVersion  |  String
 
 <details>
 <summary>AmazonCloudWatch</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -955,6 +987,7 @@ Version  |  String
 
 <details>
 <summary>AmazonCognito</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -980,6 +1013,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonCognitoSync</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1003,6 +1037,7 @@ Operation  |  String
 
 <details>
 <summary>AmazonConnect</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1026,6 +1061,7 @@ Operation  |  String
 
 <details>
 <summary>AmazonDAX</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1056,6 +1092,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonDynamoDB</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1091,6 +1128,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonEC2</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1172,6 +1210,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonECR</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1202,6 +1241,7 @@ StorageType  |  String
 
 <details>
 <summary>AmazonEFS</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1226,6 +1266,7 @@ Operation  |  String
 
 <details>
 <summary>AmazonES</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1263,6 +1304,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonETS</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1289,6 +1331,7 @@ VideoResolution  |  String
 
 <details>
 <summary>AmazonElastiCache</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1327,6 +1370,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonGameLift</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1366,6 +1410,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonGlacier</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1402,6 +1447,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonGuardDuty</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1427,6 +1473,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonInspector</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1452,6 +1499,7 @@ FreeUsageIncluded  |  String
 
 <details>
 <summary>AmazonKinesis</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1479,6 +1527,7 @@ StandardStorageRetentionIncluded  |  String
 
 <details>
 <summary>AmazonKinesisAnalytics</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1503,6 +1552,7 @@ Operation  |  String
 
 <details>
 <summary>AmazonKinesisFirehose</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1528,6 +1578,7 @@ Operation  |  String
 
 <details>
 <summary>AmazonLex</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1556,6 +1607,7 @@ SupportedModes  |  String
 
 <details>
 <summary>AmazonLightsail</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1595,6 +1647,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonML</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1621,6 +1674,7 @@ MachineLearningProcess  |  String
 
 <details>
 <summary>AmazonPinpoint</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1649,6 +1703,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonPolly</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1674,6 +1729,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonQuickSight</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1701,6 +1757,7 @@ SubscriptionType  |  String
 
 <details>
 <summary>AmazonRDS</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1758,6 +1815,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonRedshift</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1803,6 +1861,7 @@ UsageFamily  |  String
 
 <details>
 <summary>AmazonRekognition</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1830,6 +1889,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonRoute53</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1860,6 +1920,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonS3</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1897,6 +1958,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonSES</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1932,6 +1994,7 @@ Recipient  |  String
 
 <details>
 <summary>AmazonSNS</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1966,6 +2029,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonSWF</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -1999,6 +2063,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonSimpleDB</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2029,6 +2094,7 @@ Operation  |  String
 
 <details>
 <summary>AmazonStates</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2060,6 +2126,7 @@ Operation  |  String
 
 <details>
 <summary>AmazonVPC</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2090,6 +2157,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonWAM</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2115,6 +2183,7 @@ PlanType  |  String
 
 <details>
 <summary>AmazonWorkDocs</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2144,6 +2213,7 @@ serviceName  |  String
 
 <details>
 <summary>AmazonWorkMail</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2169,6 +2239,7 @@ MailboxStorage  |  String
 
 <details>
 <summary>AmazonWorkSpaces</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2204,6 +2275,7 @@ SoftwareIncluded  |  String
 
 <details>
 <summary>CloudHSM</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2230,6 +2302,7 @@ UpfrontCommitment  |  String
 
 <details>
 <summary>CodeBuild</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2259,6 +2332,7 @@ ComputeType  |  String
 
 <details>
 <summary>ContactCenterTelecomm</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2285,6 +2359,7 @@ LineType  |  String
 
 <details>
 <summary>ElasticMapReduce</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2312,6 +2387,7 @@ SoftwareType  |  String
 
 <details>
 <summary>IngestionService</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2338,6 +2414,7 @@ DataAction  |  String
 
 <details>
 <summary>IngestionServiceSnowball</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2372,6 +2449,7 @@ SnowballType  |  String
 
 <details>
 <summary>OpsWorks</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2398,6 +2476,7 @@ serviceName  |  String
 
 <details>
 <summary>SnowballExtraDays</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2424,6 +2503,7 @@ SnowballType  |  String
 
 <details>
 <summary>awskms</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2450,6 +2530,7 @@ Operation  |  String
 
 <details>
 <summary>awswaf</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2475,6 +2556,7 @@ Operation  |  String
 
 <details>
 <summary>datapipeline</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
@@ -2503,6 +2585,7 @@ FrequencyMode  |  String
 
 <details>
 <summary>mobileanalytics</summary>
+
 Field | Type
 ----- | ----
 SKU  |  String
