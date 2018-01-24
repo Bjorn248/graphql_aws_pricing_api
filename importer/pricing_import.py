@@ -158,7 +158,7 @@ class PricingImporter(object):
             filenames.append('{}.csv'.format(offer))
             urls.append(offer_info.get('currentVersionUrl', 'PARSING_ERROR'))
 
-        for url in urls[0:4]:
+        for url in urls:
             self.download_offer_file(url)
 
         for filename in filenames:
