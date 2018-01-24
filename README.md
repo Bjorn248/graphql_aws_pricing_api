@@ -124,21 +124,12 @@ containers for:
 * The graphqsl server
 * The data importer
 
-Once the database is up you can connect to it via:
+Once the database is up you can connect to the mariadb cli via:
 
-    docker-compose run db mysql -h db -p
+    docker-compose run db mysql -h db -p'prices123'
 
-and you can enter the default password of `prices123` (or whatever password
-you used to build).
-
-You can do an initial data import or update via:
+Once the database is running, you can do an initial data import or update via:
 
     docker-compose run importer /scripts/pricing_import.py
 
-*Note:* you will most likely have to pass environment variables to importer
-to connect to the db through docker properly, at least
-
-    docker-compose run \
-        -e MARIADB_HOST=db \
-        -e MARIADB_USER=root \
-        importer /scripts/pricing_import.py
+Finally, you can run `docker-compose run server` to start the local server.

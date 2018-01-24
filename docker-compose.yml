@@ -16,3 +16,14 @@ services:
         environment:
             MARIADB_USER: root
             MARIADB_HOST: db
+    server:
+        build: ./server
+        ports:
+        - "4000:4000"
+        depends_on:
+        - db
+        links:
+        - db
+        environment:
+            MARIADB_USER: root
+            MARIADB_HOST: db
