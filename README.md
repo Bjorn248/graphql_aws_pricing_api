@@ -132,4 +132,4 @@ Once the database is running, you can do an initial data import or update via:
 
     docker-compose run importer /scripts/pricing_import.py
 
-Finally, you can run `docker-compose run server` to start the local server.
+Finally, you can run `docker-compose up server` to start the local server.
