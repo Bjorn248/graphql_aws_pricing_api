@@ -1,0 +1,18 @@
+version: '3'
+services:
+    db:
+        image: mariadb
+        ports:
+        - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: prices123
+            MYSQL_DATABASE: aws_prices
+    importer:
+        build: ./importer
+        depends_on:
+        - db
+        links:
+        - db
+        environment:
+            MARIADB_USER: root
+            MARIADB_HOST: db

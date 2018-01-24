@@ -111,3 +111,34 @@ Then, simply start the application using `yarn start`
 
 ## GraphQL Data Types
 See [SCHEMATA.md](./SCHEMATA.md)
+
+## Local Development with Docker
+You can use `docker-compose` to create a local test environment that should
+match the deployed environment for the purposes of development and local
+testing.
+
+To get started, run `docker-compose up`. This should create the necessary
+containers for:
+
+* The database
+* The graphqsl server
+* The data importer
+
+Once the database is up you can connect to it via:
+
+    docker-compose run db mysql -h db -p
+
+and you can enter the default password of `prices123` (or whatever password
+you used to build).
+
+You can do an initial data import or update via:
+
+    docker-compose run importer /scripts/pricing_import.py
+
+*Note:* you will most likely have to pass environment variables to importer
+to connect to the db through docker properly, at least
+
+    docker-compose run \
+        -e MARIADB_HOST=db \
+        -e MARIADB_USER=root \
+        importer /scripts/pricing_import.py
