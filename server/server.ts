@@ -15,6 +15,7 @@ const mariaDBHost = getenv('MARIADB_HOST', 'localhost');
 const mariaDBUser = getenv('MARIADB_USER', 'pricer');
 const mariaDBPass = getenv('MARIADB_PASSWORD', 'prices123');
 const mariaDBName = getenv('MARIADB_DB', 'aws_prices');
+const PORT = getenv('PORT', 4000);
 
 const GraphQLObjectMap = {};
 const GraphQLQueryMap = {};
@@ -57,7 +58,6 @@ export const generateQueryFunction = (pool, tableName) => (
   queryString = format(queryString, queryIdentifiers);
   return pool.query(queryString);
 };
-
 export const generateFieldFunction = FieldMap => () => FieldMap;
 
 export const generateRootQueryObject = (pool, GraphQLObjectMap) => {
@@ -95,7 +95,7 @@ export const getColumns = async (pool, GraphQLObjectMap) => {
     rows.forEach(row => {
       GraphQLObjectMap[tableName][row.Field] = {
         type: GraphQLString,
-        resolve: generateQueryFunction(pool, row.Field),
+        resolve: generateResolveFunction(row.Field),
       };
     });
   });
@@ -161,9 +161,9 @@ export const run = async () => {
       }),
     );
 
-    app.listen(4001);
+    app.listen(PORT);
     console.log(
-      'Running a GraphQL API server at http://localhost:4001/graphql',
+      `Running a GraphQL API server at http://localhost:${PORT}/graphql`,
     );
   } catch (err) {
     console.error('Initialization error');
