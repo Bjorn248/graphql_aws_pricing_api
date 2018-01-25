@@ -124,12 +124,24 @@ containers for:
 * The graphqsl server
 * The data importer
 
-Once the database is up you can connect to the mariadb cli via:
+More specifically you might want to do `docker-compose up -d --build`.
+
+Once the database is running the importer script should initialize the database
+schema and data.
+
+You can connect to the mariadb cli via:
 
     docker-compose run db mysql -h db -p'prices123'
 
-Once the database is running, you can do an initial data import or update via:
+You can do an data import update via:
 
     docker-compose run importer /scripts/pricing_import.py
 
-Finally, you can run `docker-compose up server` to start the local server.
+You should be able to access the server from http://localhost:4000. Note that
+the server will not start up properly until the initial data ingestion, so if
+you are running `docker-compose up` for the first time you may have to wait a
+few minutes. Check the status via `docker-compose logs server`. If it outputs
+the message that Graphql is running at localhost:4000 you're good to go.
+
+Any updates that you make to the `server/` directory will automatically
+propagate to the container and the app will be restarted by `pm2`.

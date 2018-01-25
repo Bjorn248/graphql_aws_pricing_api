@@ -16,14 +16,15 @@ services:
         environment:
             MARIADB_USER: root
             MARIADB_HOST: db
+        command: ["/scripts/wait-for", "db:3306", "--", "/scripts/pricing_import.py"]
     server:
         build: ./server
         ports:
         - "4000:4000"
         depends_on:
         - db
-        links:
-        - db
+        volumes:
+        - ./server:/usr/src/app
         environment:
             MARIADB_USER: root
             MARIADB_HOST: db
