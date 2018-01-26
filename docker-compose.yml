@@ -1,0 +1,30 @@
+version: '3'
+services:
+    db:
+        image: mariadb
+        ports:
+        - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: prices123
+            MYSQL_DATABASE: aws_prices
+    importer:
+        build: ./importer
+        depends_on:
+        - db
+        links:
+        - db
+        environment:
+            MARIADB_USER: root
+            MARIADB_HOST: db
+        command: ["/scripts/wait-for", "db:3306", "--", "/scripts/pricing_import.py"]
+    server:
+        build: ./server
+        ports:
+        - "4000:4000"
+        depends_on:
+        - db
+        volumes:
+        - ./server/src/:/usr/src/app/src
+        environment:
+            MARIADB_USER: root
+            MARIADB_HOST: db

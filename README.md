@@ -111,3 +111,37 @@ Then, simply start the application using `yarn start`
 
 ## GraphQL Data Types
 See [SCHEMATA.md](./SCHEMATA.md)
+
+## Local Development with Docker
+You can use `docker-compose` to create a local test environment that should
+match the deployed environment for the purposes of development and local
+testing.
+
+To get started, run `docker-compose up`. This should create the necessary
+containers for:
+
+* The database
+* The graphqsl server
+* The data importer
+
+More specifically you might want to do `docker-compose up -d --build`.
+
+Once the database is running the importer script should initialize the database
+schema and data.
+
+You can connect to the mariadb cli via:
+
+    docker-compose run db mysql -h db -p'prices123'
+
+You can do an data import update via:
+
+    docker-compose run importer /scripts/pricing_import.py
+
+You should be able to access the server from http://localhost:4000. Note that
+the server will not start up properly until the initial data ingestion, so if
+you are running `docker-compose up` for the first time you may have to wait a
+few minutes. Check the status via `docker-compose logs server`. If it outputs
+the message that Graphql is running at localhost:4000 you're good to go.
+
+Any updates that you make to the `server/` directory will automatically
+propagate to the container and the app will be restarted by `pm2`.
