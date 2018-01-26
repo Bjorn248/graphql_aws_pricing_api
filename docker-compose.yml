@@ -24,7 +24,7 @@ services:
         depends_on:
         - db
         volumes:
-        - ./server:/usr/src/app
+        - ./server/src/:/usr/src/app/src
         environment:
             MARIADB_USER: root
             MARIADB_HOST: db
