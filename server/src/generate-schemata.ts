@@ -19,18 +19,20 @@ export const run = async () => {
   const [completeGraphQLObjectMap] = generateQueryMap(columnPopulatedGraphQLObjectMap, GraphQLQueryMap);
 
   Object.keys(completeGraphQLObjectMap).forEach(table => {
-    console.log(`### ${table}
+    console.log(`<details>
+<summary>${table}</summary>
+
 Field | Type
------ | ----
-`);
+----- | ----`);
 
     Object.keys(completeGraphQLObjectMap[table]).forEach(column => {
       console.log(`${column} | ${completeGraphQLObjectMap[table][column].type}`);
     });
+    console.log(`</details>`);
+    console.log();
   });
 
   pool.end();
-  console.log();
 };
 
 if (require.main === module) {

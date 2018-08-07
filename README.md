@@ -13,7 +13,7 @@ An example query string might look like this
 
 ```
 {
-  AmazonEC2(TermType:"OnDemand", Location:"US East (N. Virginia)", OS:"Linux", InstanceType:"m3.medium", Tenancy:"Shared") {
+  AmazonEC2(TermType:"OnDemand", Location:"US East (N. Virginia)", OS:"Linux", InstanceType:"m3.medium", Tenancy:"Shared", PreInstalledSW:"NA") {
     PricePerUnit
   }
 }
@@ -28,12 +28,13 @@ WHERE  `TermType` = 'OnDemand'
        AND `InstanceType` = 'm3.medium'
        AND `Tenancy` = 'Shared'
        AND `OS` = 'Linux';
+       AND `PreInstalledSW` = 'NA';
 ```
 
 A full example HTTP POST request might look like this
 ```
 {
-  "query": "{\n  AmazonEC2(TermType:\"OnDemand\", Location:\"US East (N. Virginia)\", OS:\"Linux\", InstanceType:\"m3.medium\", Tenancy:\"Shared\") {\n    PricePerUnit\n  }\n}",
+  "query": "{\n  AmazonEC2(TermType:\"OnDemand\", Location:\"US East (N. Virginia)\", OS:\"Linux\", InstanceType:\"m3.medium\", Tenancy:\"Shared\", PreInstalledSW:\"NA\") {\n    PricePerUnit\n  }\n}",
   "variables": null,
   "operationName": null
 }
@@ -56,7 +57,7 @@ An example response might look like this
 [GraphQL Aliases](http://graphql.org/learn/queries/#aliases) can be taken advantage of to retreive multiple pieces of pricing data at once.
 For example:
 ```
-{"query":"{ t2_xlarge_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.xlarge\", OS:\"Linux\", Tenancy:\"Shared\") {PricePerUnit Unit Currency} t2_medium_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.medium\", OS:\"Linux\", Tenancy:\"Shared\") {PricePerUnit Unit Currency}}","variables":"","operationName":""}
+{"query":"{ t2_xlarge_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.xlarge\", OS:\"Linux\", Tenancy:\"Shared\", PreInstalledSW:\"NA\") {PricePerUnit Unit Currency} t2_medium_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.medium\", OS:\"Linux\", Tenancy:\"Shared\", PreInstalledSW:\"NA\") {PricePerUnit Unit Currency}}","variables":"","operationName":""}
 ```
 
 The response for the above query should look like this:
@@ -83,7 +84,7 @@ The response for the above query should look like this:
 
 Here's a working curl you can use to test the above request query
 ```
-curl -H "Content-Type: application/json" -X POST -d '{"query":"{ t2_xlarge_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.xlarge\", OS:\"Linux\", Tenancy:\"Shared\") {PricePerUnit Unit Currency} t2_medium_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.medium\", OS:\"Linux\", Tenancy:\"Shared\") {PricePerUnit Unit Currency}}","variables":"","operationName":""}' https://fvaexi95f8.execute-api.us-east-1.amazonaws.com/Dev/graphql/
+curl -H "Content-Type: application/json" -X POST -d '{"query":"{ t2_xlarge_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.xlarge\", OS:\"Linux\", Tenancy:\"Shared\", PreInstalledSW:\"NA\") {PricePerUnit Unit Currency} t2_medium_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.medium\", OS:\"Linux\", Tenancy:\"Shared\", PreInstalledSW:\"NA\") {PricePerUnit Unit Currency}}","variables":"","operationName":""}' https://fvaexi95f8.execute-api.us-east-1.amazonaws.com/Dev/graphql/
 ```
 
 # Local Development
