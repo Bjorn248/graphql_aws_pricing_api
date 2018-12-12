@@ -7,4 +7,4 @@ RUN yarn install
 
 EXPOSE 4000
 
-CMD ["npx", "pm2", "start", "src/server.ts", "--watch", "--no-daemon", "--interpreter=node_modules/.bin/ts-node", "--restart-delay=30000"]
+CMD ["npx", "pm2", "start", "src/server.js", "--watch", "--no-daemon", "--restart-delay=30000"]
