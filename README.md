@@ -13,7 +13,7 @@ An example query string might look like this
 
 ```
 {
-  AmazonEC2(TermType:"OnDemand", Location:"US East (N. Virginia)", OS:"Linux", InstanceType:"m3.medium", Tenancy:"Shared", PreInstalledSW:"NA") {
+  AmazonEC2(TermType:"OnDemand", Location:"US East (N. Virginia)", OS:"Linux", InstanceType:"m3.medium", Tenancy:"Shared", PreInstalledSW:"NA",CapacityStatus:"Used") {
     PricePerUnit
   }
 }
@@ -28,7 +28,8 @@ WHERE  `TermType` = 'OnDemand'
        AND `InstanceType` = 'm3.medium'
        AND `Tenancy` = 'Shared'
        AND `OS` = 'Linux'
-       AND `PreInstalledSW` = 'NA';
+       AND `PreInstalledSW` = 'NA'
+       AND `CapacityStatus` = 'Used';
 ```
 
 A full example HTTP POST request might look like this

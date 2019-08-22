@@ -20,6 +20,6 @@
     "typescript": "^2.6.2"
   },
   "scripts": {
-    "start": "node --max-old-space-size=4096 server.js"
+    "start": "node --max-old-space-size=4096 src/server.js"
   }
 }
