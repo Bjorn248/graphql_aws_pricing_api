@@ -147,3 +147,6 @@ the message that Graphql is running at localhost:4000 you're good to go.
 
 Any updates that you make to the `server/` directory will automatically
 propagate to the container and the app will be restarted by `pm2`.
+
+# TODO
+Improve lambda development, perhaps use serverless framework

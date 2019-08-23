@@ -224,7 +224,8 @@ async.waterfall(waterfallTasks, function (err, result) {
 	if (process.env.GENERATE_MARKDOWN_DOCS == 1) {
 		for (var table in GraphQLObjectMap) {
 			if (GraphQLObjectMap.hasOwnProperty(table)) {
-				console.log("###", table);
+                console.log("<details>")
+				console.log("<summary>", table, "</summary>");
 				console.log("Field | Type");
 				console.log("----- | ----");
 				for (var column in GraphQLObjectMap[table]) {
@@ -232,6 +233,7 @@ async.waterfall(waterfallTasks, function (err, result) {
 						console.log(column, " | ", GraphQLObjectMap[table][column].type);
 					}
 				}
+                console.log("</details>");
 			}
 		}
 		console.log("");
