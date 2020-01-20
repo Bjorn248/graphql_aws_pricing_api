@@ -45,6 +45,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
+CacheMemorySize  |  String
 GraphQLOperation  |  String
 Protocol  |  String
 RealTimeOperation  |  String
@@ -72,6 +73,7 @@ LocationType  |  String
 UsageType  |  String
 Operation  |  String
 serviceName  |  String
+Storage_Type  |  String
 StorageType  |  String
 </details>
 <details>
@@ -125,6 +127,30 @@ serviceName  |  String
 Type  |  String
 </details>
 <details>
+<summary> AWSCloudFormation </summary>
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+RelatedTo  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+UsageType  |  String
+Operation  |  String
+CloudFormationResource_Provider  |  String
+serviceName  |  String
+</details>
+<details>
 <summary> AWSCloudMap </summary>
 Field | Type
 ----- | ----
@@ -169,6 +195,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
+InsightsType  |  String
 serviceName  |  String
 </details>
 <details>
@@ -215,7 +242,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-DeploymentLocation  |  String
+Deployment_Location  |  String
 serviceName  |  String
 </details>
 <details>
@@ -265,7 +292,9 @@ LocationType  |  String
 UsageType  |  String
 Operation  |  String
 Category  |  String
+CI_Type  |  String
 serviceName  |  String
+Type  |  String
 </details>
 <details>
 <summary> AWSCostExplorer </summary>
@@ -288,7 +317,33 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-RequestType  |  String
+Granularity  |  String
+Request_Type  |  String
+serviceName  |  String
+</details>
+<details>
+<summary> AWSDataExchange </summary>
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+ProductFamily  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+Storage_Class  |  String
+VolumeType  |  String
+UsageType  |  String
+Operation  |  String
 serviceName  |  String
 </details>
 <details>
@@ -312,7 +367,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-ProductSchemaDescription  |  String
+Product_Schema_Description  |  String
 serviceName  |  String
 </details>
 <details>
@@ -373,11 +428,11 @@ NetworkPerformance  |  String
 ProcessorArchitecture  |  String
 StorageMedia  |  String
 VolumeType  |  String
-MinVolumeSize  |  String
+Min_Volume_Size  |  String
 MaxVolumeSize  |  String
 UsageType  |  String
 Operation  |  String
-AvailabilityZone  |  String
+Availability_Zone  |  String
 DedicatedEBSThroughput  |  String
 EnhancedNetworkingSupported  |  String
 ProcessorFeatures  |  String
@@ -404,21 +459,21 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-AccountAssistance  |  String
-ArchitecturalReview  |  String
-ArchitectureSupport  |  String
-BestPractices  |  String
-CaseSeverityResponseTimes  |  String
-CustomerServiceandCommunities  |  String
-IncludedServices  |  String
-LaunchSupport  |  String
-OperationsSupport  |  String
-ProactiveGuidance  |  String
-ProgrammaticCaseManagement  |  String
-TechnicalSupport  |  String
-ThirdPartySoftwareSupport  |  String
+Account_Assistance  |  String
+Architectural_Review  |  String
+Architecture_Support  |  String
+Best_Practices  |  String
+Case_SeverityResponse_Times  |  String
+Customer_Service_and_Communities  |  String
+Included_Services  |  String
+Launch_Support  |  String
+Operations_Support  |  String
+Proactive_Guidance  |  String
+Programmatic_Case_Management  |  String
+Technical_Support  |  String
+ThirdParty_Software_Support  |  String
 Training  |  String
-WhoCanOpenCases  |  String
+Who_Can_Open_Cases  |  String
 </details>
 <details>
 <summary> AWSDeviceFarm </summary>
@@ -442,9 +497,10 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-DeviceOS  |  String
-ExecutionMode  |  String
-MeterMode  |  String
+Device_OS  |  String
+Execution_Mode  |  String
+Meter_Mode  |  String
+OS  |  String
 serviceName  |  String
 </details>
 <details>
@@ -473,12 +529,12 @@ ToLocation  |  String
 ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
-DirectConnectLocation  |  String
+Direct_Connect_Location  |  String
 GeoRegionCode  |  String
-PortSpeed  |  String
+Port_Speed  |  String
 serviceName  |  String
 Version  |  String
-VirtualInterfaceType  |  String
+Virtual_Interface_Type  |  String
 </details>
 <details>
 <summary> AWSDirectoryService </summary>
@@ -502,10 +558,10 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-DirectorySize  |  String
-DirectoryType  |  String
-DirectoryTypeDescription  |  String
-PricingUnit  |  String
+Directory_Size  |  String
+Directory_Type  |  String
+Directory_Type_Description  |  String
+Pricing_Unit  |  String
 serviceName  |  String
 </details>
 <details>
@@ -530,19 +586,19 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-AddOnFeature  |  String
+AddOn_Feature  |  String
 Codec  |  String
-FrameRate  |  String
+Frame_Rate  |  String
 Resolution  |  String
 serviceName  |  String
-SingleorDualPass  |  String
+Single_or_Dual_Pass  |  String
 Tier  |  String
-TranscodingResult  |  String
-VideoCodec  |  String
-VideoFrameRate  |  String
-VideoQualitySetting  |  String
-VideoResolution  |  String
-VQSetting  |  String
+Transcoding_Result  |  String
+Video_Codec  |  String
+Video_Frame_Rate  |  String
+Video_Quality_Setting  |  String
+Video_Resolution  |  String
+VQ_Setting  |  String
 </details>
 <details>
 <summary> AWSElementalMediaLive </summary>
@@ -565,15 +621,15 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-BitRate  |  String
-FrameRate  |  String
+Bit_Rate  |  String
+Frame_Rate  |  String
 Input  |  String
 Output  |  String
 Pipeline  |  String
-ReserveType  |  String
+Reserve_Type  |  String
 Resolution  |  String
 serviceName  |  String
-VideoQuality  |  String
+Video_Quality  |  String
 </details>
 <details>
 <summary> AWSElementalMediaPackage </summary>
@@ -623,7 +679,7 @@ Availability  |  String
 UsageType  |  String
 Operation  |  String
 Durability  |  String
-IngestType  |  String
+Ingest_Type  |  String
 serviceName  |  String
 StorageClass  |  String
 </details>
@@ -648,7 +704,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-OperationType  |  String
+Operation_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -666,13 +722,14 @@ EndingRange  |  String
 Unit  |  String
 PricePerUnit  |  String
 Currency  |  String
+RelatedTo  |  String
 ProductFamily  |  String
 ServiceCode  |  String
 Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-EventType  |  String
+Event_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -722,10 +779,10 @@ ToLocation  |  String
 ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
-ClientLocation  |  String
+Client_Location  |  String
 DominantNondominant  |  String
 serviceName  |  String
-TrafficDirection  |  String
+Traffic_Direction  |  String
 </details>
 <details>
 <summary> AWSGlue </summary>
@@ -774,7 +831,7 @@ LocationType  |  String
 UsageType  |  String
 Operation  |  String
 serviceName  |  String
-TenancySupport  |  String
+Tenancy_Support  |  String
 </details>
 <details>
 <summary> AWSIoT </summary>
@@ -797,7 +854,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-EventType  |  String
+Event_Type  |  String
 NewCode  |  String
 Protocol  |  String
 serviceName  |  String
@@ -824,7 +881,7 @@ LocationType  |  String
 UsageType  |  String
 Operation  |  String
 Device  |  String
-DeviceType  |  String
+Device_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -849,6 +906,30 @@ LocationType  |  String
 AWSGroup  |  String
 UsageType  |  String
 Operation  |  String
+serviceName  |  String
+</details>
+<details>
+<summary> AWSIoTEvents </summary>
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+ProductFamily  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+UsageType  |  String
+Operation  |  String
+AWSIoTEvents  |  String
 serviceName  |  String
 </details>
 <details>
@@ -927,7 +1008,7 @@ ToLocation  |  String
 ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
-FlowType  |  String
+Flow_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -954,9 +1035,9 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-MessageDeliveryFrequency  |  String
-MessageDeliveryOrder  |  String
-QueueType  |  String
+Message_Delivery_Frequency  |  String
+Message_Delivery_Order  |  String
+Queue_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -1008,6 +1089,35 @@ Operation  |  String
 serviceName  |  String
 </details>
 <details>
+<summary> AWSSecurityHub </summary>
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+ProductFamily  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+UsageType  |  String
+Operation  |  String
+Finding_Group  |  String
+Finding_Source  |  String
+Finding_Storage  |  String
+serviceName  |  String
+Standard_Group  |  String
+Standard_Source  |  String
+Standard_Storage  |  String
+</details>
+<details>
 <summary> AWSServiceCatalog </summary>
 Field | Type
 ----- | ----
@@ -1028,7 +1138,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-WithActiveUsers  |  String
+With_Active_Users  |  String
 </details>
 <details>
 <summary> AWSShield </summary>
@@ -1056,7 +1166,7 @@ ToLocation  |  String
 ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
-ResourceType  |  String
+Resource_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -1079,14 +1189,14 @@ ProductFamily  |  String
 ServiceCode  |  String
 Location  |  String
 LocationType  |  String
-StorageClass  |  String
-FeeCode  |  String
-FeeDescription  |  String
+Storage_Class  |  String
+Fee_Code  |  String
+Fee_Description  |  String
 UsageType  |  String
 Operation  |  String
-MaximumCapacity  |  String
+Maximum_Capacity  |  String
 serviceName  |  String
-StorageDescription  |  String
+Storage_Description  |  String
 Version  |  String
 </details>
 <details>
@@ -1108,14 +1218,14 @@ ProductFamily  |  String
 ServiceCode  |  String
 Location  |  String
 LocationType  |  String
-StorageClass  |  String
-FeeCode  |  String
-FeeDescription  |  String
+Storage_Class  |  String
+Fee_Code  |  String
+Fee_Description  |  String
 UsageType  |  String
 Operation  |  String
-MaximumCapacity  |  String
+Maximum_Capacity  |  String
 serviceName  |  String
-StorageDescription  |  String
+Storage_Description  |  String
 </details>
 <details>
 <summary> AWSSupportBusiness </summary>
@@ -1138,21 +1248,21 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-AccountAssistance  |  String
-ArchitecturalReview  |  String
-ArchitectureSupport  |  String
-BestPractices  |  String
-CaseSeverityResponseTimes  |  String
-CustomerServiceandCommunities  |  String
-IncludedServices  |  String
-LaunchSupport  |  String
-OperationsSupport  |  String
-ProactiveGuidance  |  String
-ProgrammaticCaseManagement  |  String
-TechnicalSupport  |  String
-ThirdPartySoftwareSupport  |  String
+Account_Assistance  |  String
+Architectural_Review  |  String
+Architecture_Support  |  String
+Best_Practices  |  String
+Case_SeverityResponse_Times  |  String
+Customer_Service_and_Communities  |  String
+Included_Services  |  String
+Launch_Support  |  String
+Operations_Support  |  String
+Proactive_Guidance  |  String
+Programmatic_Case_Management  |  String
+Technical_Support  |  String
+ThirdParty_Software_Support  |  String
 Training  |  String
-WhoCanOpenCases  |  String
+Who_Can_Open_Cases  |  String
 </details>
 <details>
 <summary> AWSSupportEnterprise </summary>
@@ -1175,21 +1285,21 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-AccountAssistance  |  String
-ArchitecturalReview  |  String
-ArchitectureSupport  |  String
-BestPractices  |  String
-CaseSeverityResponseTimes  |  String
-CustomerServiceandCommunities  |  String
-IncludedServices  |  String
-LaunchSupport  |  String
-OperationsSupport  |  String
-ProactiveGuidance  |  String
-ProgrammaticCaseManagement  |  String
-TechnicalSupport  |  String
-ThirdPartySoftwareSupport  |  String
+Account_Assistance  |  String
+Architectural_Review  |  String
+Architecture_Support  |  String
+Best_Practices  |  String
+Case_SeverityResponse_Times  |  String
+Customer_Service_and_Communities  |  String
+Included_Services  |  String
+Launch_Support  |  String
+Operations_Support  |  String
+Proactive_Guidance  |  String
+Programmatic_Case_Management  |  String
+Technical_Support  |  String
+ThirdParty_Software_Support  |  String
 Training  |  String
-WhoCanOpenCases  |  String
+Who_Can_Open_Cases  |  String
 </details>
 <details>
 <summary> AWSSystemsManager </summary>
@@ -1212,12 +1322,12 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-datatransfer  |  String
+data_transfer  |  String
 describes  |  String
 gets  |  String
 instances  |  String
-OpsItems  |  String
-Parametertype  |  String
+Ops_Items  |  String
+Parameter_type  |  String
 serviceName  |  String
 steps  |  String
 storage  |  String
@@ -1341,7 +1451,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-CacheMemorySizeGB  |  String
+Cache_Memory_Size_GB  |  String
 serviceName  |  String
 </details>
 <details>
@@ -1371,11 +1481,11 @@ OS  |  String
 LicenseModel  |  String
 UsageType  |  String
 Operation  |  String
-InstanceFunction  |  String
-MemoryGiB  |  String
-OSLicenseModel  |  String
+Instance_Function  |  String
+Memory_GiB  |  String
+OS_License_Model  |  String
 serviceName  |  String
-VideoMemoryGiB  |  String
+Video_Memory_GiB  |  String
 </details>
 <details>
 <summary> AmazonAthena </summary>
@@ -1399,7 +1509,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-FreeQueryTypes  |  String
+Free_Query_Types  |  String
 serviceName  |  String
 </details>
 <details>
@@ -1423,7 +1533,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-LicenseType  |  String
+License_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -1499,7 +1609,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-CallingType  |  String
+Calling_Type  |  String
 Country  |  String
 serviceName  |  String
 </details>
@@ -1549,7 +1659,7 @@ ProductFamily  |  String
 ServiceCode  |  String
 Location  |  String
 LocationType  |  String
-StorageClass  |  String
+Storage_Class  |  String
 VolumeType  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
@@ -1585,8 +1695,8 @@ ToLocation  |  String
 ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
-RequestDescription  |  String
-RequestType  |  String
+Request_Description  |  String
+Request_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -1613,7 +1723,7 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-CloudSearchVersion  |  String
+Cloud_Search_Version  |  String
 serviceName  |  String
 </details>
 <details>
@@ -1641,7 +1751,7 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-AlarmType  |  String
+Alarm_Type  |  String
 serviceName  |  String
 Version  |  String
 </details>
@@ -1712,6 +1822,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
+Channel  |  String
 serviceName  |  String
 </details>
 <details>
@@ -1773,10 +1884,10 @@ NetworkPerformance  |  String
 ProcessorArchitecture  |  String
 StorageMedia  |  String
 VolumeType  |  String
-MinVolumeSize  |  String
+Min_Volume_Size  |  String
 MaxVolumeSize  |  String
-EngineCode  |  String
-DatabaseEngine  |  String
+Engine_Code  |  String
+Database_Engine  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
@@ -1871,21 +1982,21 @@ Operation  |  String
 CapacityStatus  |  String
 DedicatedEBSThroughput  |  String
 ECU  |  String
-ElasticGraphicsType  |  String
+Elastic_Graphics_Type  |  String
 EnhancedNetworkingSupported  |  String
 GPU  |  String
-GPUMemory  |  String
+GPU_Memory  |  String
 Instance  |  String
 InstanceCapacity10xLarge  |  String
-InstanceCapacity12xlarge  |  String
-InstanceCapacity16xlarge  |  String
-InstanceCapacity18xlarge  |  String
-InstanceCapacity24xlarge  |  String
+Instance_Capacity__12xlarge  |  String
+Instance_Capacity__16xlarge  |  String
+Instance_Capacity__18xlarge  |  String
+Instance_Capacity__24xlarge  |  String
 InstanceCapacity2xLarge  |  String
-InstanceCapacity32xlarge  |  String
+Instance_Capacity__32xlarge  |  String
 InstanceCapacity4xLarge  |  String
 InstanceCapacity8xLarge  |  String
-InstanceCapacity9xlarge  |  String
+Instance_Capacity__9xlarge  |  String
 InstanceCapacityLarge  |  String
 InstanceCapacityMedium  |  String
 InstanceCapacityxLarge  |  String
@@ -1897,7 +2008,10 @@ NormSizeFactor  |  String
 PhysicalCores  |  String
 PreInstalledSW  |  String
 ProcessorFeatures  |  String
+Product_Type  |  String
+Resource_Type  |  String
 serviceName  |  String
+Volume_API_Name  |  String
 </details>
 <details>
 <summary> AmazonECR </summary>
@@ -1921,7 +2035,7 @@ LocationType  |  String
 UsageType  |  String
 Operation  |  String
 serviceName  |  String
-StorageType  |  String
+Storage_Type  |  String
 </details>
 <details>
 <summary> AmazonECS </summary>
@@ -1968,12 +2082,12 @@ ProductFamily  |  String
 ServiceCode  |  String
 Location  |  String
 LocationType  |  String
-StorageClass  |  String
+Storage_Class  |  String
 UsageType  |  String
 Operation  |  String
-AccessType  |  String
+Access_Type  |  String
 serviceName  |  String
-ThroughputClass  |  String
+Throughput_Class  |  String
 </details>
 <details>
 <summary> AmazonEI </summary>
@@ -1996,8 +2110,8 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-AcceleratorSize  |  String
-AcceleratorType  |  String
+Accelerator_Size  |  String
+Accelerator_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -2055,7 +2169,7 @@ StorageMedia  |  String
 UsageType  |  String
 Operation  |  String
 ECU  |  String
-MemoryGiB  |  String
+Memory_GiB  |  String
 serviceName  |  String
 </details>
 <details>
@@ -2080,8 +2194,8 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-TranscodingResult  |  String
-VideoResolution  |  String
+Transcoding_Result  |  String
+Video_Resolution  |  String
 </details>
 <details>
 <summary> AmazonElastiCache </summary>
@@ -2112,7 +2226,7 @@ InstanceFamily  |  String
 vCPU  |  String
 Memory  |  String
 NetworkPerformance  |  String
-CacheEngine  |  String
+Cache_Engine  |  String
 StorageMedia  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
@@ -2141,9 +2255,10 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-Filesystemtype  |  String
+Deployment_option  |  String
+File_system_type  |  String
 serviceName  |  String
-Storagetype  |  String
+Storage_type  |  String
 </details>
 <details>
 <summary> AmazonForecast </summary>
@@ -2166,7 +2281,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-GroupDetails  |  String
+Group_Details  |  String
 serviceName  |  String
 </details>
 <details>
@@ -2193,13 +2308,11 @@ InstanceType  |  String
 CurrentGeneration  |  String
 vCPU  |  String
 OS  |  String
-AWSGroup  |  String
-AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
 ECU  |  String
-InstanceStorageGB  |  String
-MemoryGiB  |  String
+Instance_Storage_GB  |  String
+Memory_GiB  |  String
 serviceName  |  String
 </details>
 <details>
@@ -2223,8 +2336,8 @@ Location  |  String
 LocationType  |  String
 Availability  |  String
 VolumeType  |  String
-FeeCode  |  String
-FeeDescription  |  String
+Fee_Code  |  String
+Fee_Description  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
@@ -2278,7 +2391,32 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-FreeUsageIncluded  |  String
+Free_Usage_Included  |  String
+serviceName  |  String
+</details>
+<details>
+<summary> AmazonKendra </summary>
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+ProductFamily  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+AWSGroup  |  String
+AWSGroupDescription  |  String
+UsageType  |  String
+Operation  |  String
 serviceName  |  String
 </details>
 <details>
@@ -2304,9 +2442,9 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-MaximumExtendedStorage  |  String
+Maximum_Extended_Storage  |  String
 serviceName  |  String
-StandardStorageRetentionIncluded  |  String
+Standard_Storage_Retention_Included  |  String
 </details>
 <details>
 <summary> AmazonKinesisAnalytics </summary>
@@ -2406,10 +2544,10 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-InputMode  |  String
-OutputMode  |  String
+Input_Mode  |  String
+Output_Mode  |  String
 serviceName  |  String
-SupportedModes  |  String
+Supported_Modes  |  String
 </details>
 <details>
 <summary> AmazonLightsail </summary>
@@ -2443,12 +2581,37 @@ ToLocation  |  String
 ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
-CountsAgainstQuota  |  String
-DataTransferQuota  |  String
+Counts_Against_Quota  |  String
+Data_Transfer_Quota  |  String
 Engine  |  String
-FreeOverage  |  String
-HighAvailability  |  String
-OverageType  |  String
+Free_Overage  |  String
+High_Availability  |  String
+Overage_Type  |  String
+serviceName  |  String
+</details>
+<details>
+<summary> AmazonMCS </summary>
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+VolumeType  |  String
+AWSGroup  |  String
+AWSGroupDescription  |  String
+UsageType  |  String
+Operation  |  String
 serviceName  |  String
 </details>
 <details>
@@ -2474,7 +2637,7 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-MachineLearningProcess  |  String
+Machine_Learning_Process  |  String
 </details>
 <details>
 <summary> AmazonMQ </summary>
@@ -2499,14 +2662,14 @@ vCPU  |  String
 ClockSpeed  |  String
 Memory  |  String
 NetworkPerformance  |  String
-StorageClass  |  String
+Storage_Class  |  String
 Provisioned  |  String
 LicenseModel  |  String
-DeploymentOption  |  String
+Deployment_Option  |  String
 UsageType  |  String
 Operation  |  String
-BrokerEngine  |  String
-EnhancedNetworkingSupport  |  String
+Broker_Engine  |  String
+Enhanced_Networking_Support  |  String
 NormSizeFactor  |  String
 serviceName  |  String
 </details>
@@ -2531,9 +2694,9 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-ComputeFamily  |  String
+Compute_Family  |  String
 serviceName  |  String
-StorageFamily  |  String
+Storage_Family  |  String
 </details>
 <details>
 <summary> AmazonMacie </summary>
@@ -2556,12 +2719,12 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-ActivityType  |  String
-ClassificationType  |  String
-ContentSource  |  String
-ContentType  |  String
-LogsSource  |  String
-LogsType  |  String
+Activity_Type  |  String
+Classification_Type  |  String
+Content_Source  |  String
+Content_Type  |  String
+Logs_Source  |  String
+Logs_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -2586,7 +2749,7 @@ LocationType  |  String
 InstanceType  |  String
 UsageType  |  String
 Operation  |  String
-FrameworkType  |  String
+Framework_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -2620,12 +2783,12 @@ NetworkPerformance  |  String
 ProcessorArchitecture  |  String
 StorageMedia  |  String
 VolumeType  |  String
-MinVolumeSize  |  String
+Min_Volume_Size  |  String
 MaxVolumeSize  |  String
-EngineCode  |  String
-DatabaseEngine  |  String
+Engine_Code  |  String
+Database_Engine  |  String
 LicenseModel  |  String
-DeploymentOption  |  String
+Deployment_Option  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
 TransferType  |  String
@@ -2665,7 +2828,7 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-MeteringType  |  String
+Metering_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -2693,6 +2856,31 @@ Operation  |  String
 serviceName  |  String
 </details>
 <details>
+<summary> AmazonQLDB </summary>
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+ProductFamily  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+UsageType  |  String
+Operation  |  String
+IO_Request_Type  |  String
+serviceName  |  String
+Storage_Type  |  String
+</details>
+<details>
 <summary> AmazonQuickSight </summary>
 Field | Type
 ----- | ----
@@ -2717,7 +2905,7 @@ UsageType  |  String
 Operation  |  String
 Edition  |  String
 serviceName  |  String
-SubscriptionType  |  String
+Subscription_Type  |  String
 </details>
 <details>
 <summary> AmazonRDS </summary>
@@ -2754,13 +2942,13 @@ NetworkPerformance  |  String
 ProcessorArchitecture  |  String
 StorageMedia  |  String
 VolumeType  |  String
-MinVolumeSize  |  String
+Min_Volume_Size  |  String
 MaxVolumeSize  |  String
-EngineCode  |  String
-DatabaseEngine  |  String
-DatabaseEdition  |  String
+Engine_Code  |  String
+Database_Engine  |  String
+Database_Edition  |  String
 LicenseModel  |  String
-DeploymentOption  |  String
+Deployment_Option  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
@@ -2810,7 +2998,7 @@ Operation  |  String
 ConcurrencyScalingFreeUsage  |  String
 ECU  |  String
 serviceName  |  String
-UsageFamily  |  String
+Usage_Family  |  String
 </details>
 <details>
 <summary> AmazonRekognition </summary>
@@ -2858,9 +3046,9 @@ ServiceCode  |  String
 Description  |  String
 Location  |  String
 LocationType  |  String
-RoutingType  |  String
-RoutingTarget  |  String
-ResourceEndPoint  |  String
+Routing_Type  |  String
+Routing_Target  |  String
+Resource_EndPoint  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
@@ -2887,12 +3075,17 @@ ServiceCode  |  String
 Location  |  String
 LocationType  |  String
 Availability  |  String
-StorageClass  |  String
+Storage_Class  |  String
 VolumeType  |  String
-FeeCode  |  String
-FeeDescription  |  String
+Fee_Code  |  String
+Fee_Description  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
+TransferType  |  String
+FromLocation  |  String
+FromLocationType  |  String
+ToLocation  |  String
+ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
 Durability  |  String
@@ -2916,10 +3109,10 @@ Currency  |  String
 ServiceCode  |  String
 Location  |  String
 LocationType  |  String
-StorageClass  |  String
+Storage_Class  |  String
 VolumeType  |  String
-FeeCode  |  String
-FeeDescription  |  String
+Fee_Code  |  String
+Fee_Description  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
@@ -2952,7 +3145,7 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-ContentType  |  String
+Content_Type  |  String
 Recipient  |  String
 serviceName  |  String
 </details>
@@ -2977,7 +3170,7 @@ ServiceCode  |  String
 Description  |  String
 Location  |  String
 LocationType  |  String
-EndpointType  |  String
+Endpoint_Type  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
 TransferType  |  String
@@ -3031,6 +3224,7 @@ EndingRange  |  String
 Unit  |  String
 PricePerUnit  |  String
 Currency  |  String
+RelatedTo  |  String
 ProductFamily  |  String
 ServiceCode  |  String
 Location  |  String
@@ -3044,15 +3238,18 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-AutomaticLabel  |  String
+Automatic_Label  |  String
 GPU  |  String
-GPUMemory  |  String
-LabelingTaskType  |  String
-PhysicalCPU  |  String
-PhysicalGPU  |  String
+GPU_Memory  |  String
+Integrating_API  |  String
+Integrating_Feature  |  String
+Integrating_Service  |  String
+Labeling_Task_Type  |  String
+Physical_CPU  |  String
+Physical_GPU  |  String
 serviceName  |  String
-VCPU  |  String
-WorkforceType  |  String
+V_CPU  |  String
+Workforce_Type  |  String
 </details>
 <details>
 <summary> AmazonSimpleDB </summary>
@@ -3126,7 +3323,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-EventType  |  String
+Event_Type  |  String
 Offer  |  String
 serviceName  |  String
 </details>
@@ -3153,8 +3350,8 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-APIType  |  String
-EntityType  |  String
+API_Type  |  String
+Entity_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -3176,12 +3373,12 @@ ProductFamily  |  String
 ServiceCode  |  String
 Location  |  String
 LocationType  |  String
-EndpointType  |  String
+Endpoint_Type  |  String
 AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-AttachmentType  |  String
+Attachment_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -3206,7 +3403,7 @@ LocationType  |  String
 AWSGroup  |  String
 UsageType  |  String
 Operation  |  String
-PlanType  |  String
+Plan_Type  |  String
 </details>
 <details>
 <summary> AmazonWorkDocs </summary>
@@ -3231,9 +3428,9 @@ LocationType  |  String
 Storage  |  String
 UsageType  |  String
 Operation  |  String
-FreeTrial  |  String
-MaximumStorageVolume  |  String
-MinimumStorageVolume  |  String
+Free_Trial  |  String
+Maximum_Storage_Volume  |  String
+Minimum_Storage_Volume  |  String
 serviceName  |  String
 </details>
 <details>
@@ -3257,7 +3454,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-DeploymentModel  |  String
+Deployment_Model  |  String
 serviceName  |  String
 </details>
 <details>
@@ -3281,8 +3478,8 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-FreeTier  |  String
-MailboxStorage  |  String
+Free_Tier  |  String
+Mailbox_Storage  |  String
 </details>
 <details>
 <summary> AmazonWorkSpaces </summary>
@@ -3314,11 +3511,11 @@ UsageType  |  String
 Operation  |  String
 Bundle  |  String
 License  |  String
-ResourceType  |  String
+Resource_Type  |  String
 rootVolume  |  String
-RunningMode  |  String
+Running_Mode  |  String
 serviceName  |  String
-SoftwareIncluded  |  String
+Software_Included  |  String
 userVolume  |  String
 </details>
 <details>
@@ -3344,8 +3541,8 @@ InstanceFamily  |  String
 UsageType  |  String
 Operation  |  String
 serviceName  |  String
-TrialProduct  |  String
-UpfrontCommitment  |  String
+Trial_Product  |  String
+Upfront_Commitment  |  String
 </details>
 <details>
 <summary> CodeBuild </summary>
@@ -3372,8 +3569,32 @@ Memory  |  String
 OS  |  String
 UsageType  |  String
 Operation  |  String
-ComputeFamily  |  String
-ComputeType  |  String
+Compute_Family  |  String
+Compute_Type  |  String
+serviceName  |  String
+</details>
+<details>
+<summary> CodeGuru </summary>
+Field | Type
+----- | ----
+SKU  |  String
+OfferTermCode  |  String
+RateCode  |  String
+TermType  |  String
+PriceDescription  |  String
+EffectiveDate  |  String
+StartingRange  |  String
+EndingRange  |  String
+Unit  |  String
+PricePerUnit  |  String
+Currency  |  String
+ProductFamily  |  String
+ServiceCode  |  String
+Location  |  String
+LocationType  |  String
+UsageType  |  String
+Operation  |  String
+Base_Product_Reference_Code  |  String
 serviceName  |  String
 </details>
 <details>
@@ -3397,9 +3618,9 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-CallingType  |  String
+Calling_Type  |  String
 Country  |  String
-LineType  |  String
+Line_Type  |  String
 serviceName  |  String
 </details>
 <details>
@@ -3426,7 +3647,7 @@ InstanceFamily  |  String
 UsageType  |  String
 Operation  |  String
 serviceName  |  String
-SoftwareType  |  String
+Software_Type  |  String
 </details>
 <details>
 <summary> IngestionService </summary>
@@ -3451,7 +3672,7 @@ AWSGroup  |  String
 AWSGroupDescription  |  String
 UsageType  |  String
 Operation  |  String
-DataAction  |  String
+Data_Action  |  String
 </details>
 <details>
 <summary> IngestionServiceSnowball </summary>
@@ -3482,9 +3703,9 @@ ToLocationType  |  String
 UsageType  |  String
 Operation  |  String
 JobNShipp  |  String
-ReleaseType  |  String
+Release_Type  |  String
 serviceName  |  String
-SnowballType  |  String
+Snowball_Type  |  String
 </details>
 <details>
 <summary> IoTDeviceDefender </summary>
@@ -3531,8 +3752,8 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-EventType  |  String
-IndexingSource  |  String
+Event_Type  |  String
+Indexing_Source  |  String
 NewCode  |  String
 serviceName  |  String
 </details>
@@ -3558,7 +3779,7 @@ LocationType  |  String
 AWSGroup  |  String
 UsageType  |  String
 Operation  |  String
-ServerLocation  |  String
+Server_Location  |  String
 serviceName  |  String
 </details>
 <details>
@@ -3580,12 +3801,12 @@ ProductFamily  |  String
 ServiceCode  |  String
 Location  |  String
 LocationType  |  String
-FeeCode  |  String
-FeeDescription  |  String
+Fee_Code  |  String
+Fee_Description  |  String
 UsageType  |  String
 Operation  |  String
 serviceName  |  String
-SnowballType  |  String
+Snowball_Type  |  String
 </details>
 <details>
 <summary> awskms </summary>
@@ -3712,9 +3933,9 @@ LocationType  |  String
 AWSGroup  |  String
 UsageType  |  String
 Operation  |  String
-ExecutionFrequency  |  String
-ExecutionLocation  |  String
-FrequencyMode  |  String
+Execution_Frequency  |  String
+Execution_Location  |  String
+Frequency_Mode  |  String
 </details>
 <details>
 <summary> mobileanalytics </summary>
@@ -3738,7 +3959,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-IncludedEvents  |  String
+Included_Events  |  String
 </details>
 <details>
 <summary> transcribe </summary>
@@ -3763,7 +3984,7 @@ LocationType  |  String
 UsageType  |  String
 Operation  |  String
 serviceName  |  String
-SupportedModes  |  String
+Supported_Modes  |  String
 </details>
 <details>
 <summary> translate </summary>
@@ -3787,7 +4008,7 @@ Location  |  String
 LocationType  |  String
 UsageType  |  String
 Operation  |  String
-InputMode  |  String
-OutputMode  |  String
+Input_Mode  |  String
+Output_Mode  |  String
 serviceName  |  String
 </details>
