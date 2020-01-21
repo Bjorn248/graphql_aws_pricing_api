@@ -1,6 +1,7 @@
 var express = require('express')
 var async = require('async')
 var mysql = require('mysql')
+var mysqlPromise = require('promise-mysql')
 var graphqlHTTP = require('express-graphql')
 var {
   GraphQLObjectType,
@@ -26,13 +27,21 @@ var pool = mysql.createPool({
   database: mariaDBName
 })
 
+var poolPromise = mysqlPromise.createPool({
+  connectionLimit: 50,
+  host: mariaDBHost,
+  user: mariaDBUser,
+  password: mariaDBPass,
+  database: mariaDBName
+})
+
 function generateResolveFunction (fieldName) {
   return (parentValue, args, request) => {
     return parentValue[fieldName]
   }
 }
 
-function generateQueryFunction (pool, tableName) {
+function generateQueryFunction (poolPromise, tableName) {
   return (parentValue, args, request, query) => {
     var selectionColumns = []
     query.fieldNodes[0].selectionSet.selections.forEach(function (selection) {
@@ -60,9 +69,7 @@ function generateQueryFunction (pool, tableName) {
     queryIdentifiers.unshift(selectionColumns)
     queryString = mysql.format(queryString, queryIdentifiers)
     console.log(queryString)
-    // TODO Troubleshoot why query is not making it to mysql
-    // for resolver function
-    return pool.query(queryString)
+    return poolPromise.query(queryString)
   }
 }
 
@@ -78,7 +85,7 @@ function generateRootQueryObject (GraphQLObjectMap) {
     returnObject[tableName] = {
       type: new GraphQLList(GraphQLQueryMap[tableName]),
       args: GraphQLObjectMap[tableName],
-      resolve: generateQueryFunction(pool, tableName)
+      resolve: generateQueryFunction(poolPromise, tableName)
     }
   })
   return () => {
