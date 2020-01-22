@@ -58,7 +58,14 @@ An example response might look like this
 [GraphQL Aliases](http://graphql.org/learn/queries/#aliases) can be taken advantage of to retreive multiple pieces of pricing data at once.
 For example:
 ```
-{"query":"{ t2_xlarge_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.xlarge\", OS:\"Linux\", Tenancy:\"Shared\", PreInstalledSW:\"NA\") {PricePerUnit Unit Currency} t2_medium_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.medium\", OS:\"Linux\", Tenancy:\"Shared\", PreInstalledSW:\"NA\") {PricePerUnit Unit Currency}}","variables":"","operationName":""}
+{
+  t2_xlarge_Shared: AmazonEC2(TermType:"OnDemand", Location:"US East (N. Virginia)", OS:"Linux", InstanceType:"t2.xlarge", Tenancy:"Shared", PreInstalledSW:"NA",CapacityStatus:"Used") {
+    PricePerUnit
+  }
+  t2_medium_Shared: AmazonEC2(TermType:"OnDemand", Location:"US East (N. Virginia)", OS:"Linux", InstanceType:"t2.medium", Tenancy:"Shared", PreInstalledSW:"NA",CapacityStatus:"Used") {
+    PricePerUnit
+  }
+}
 ```
 
 The response for the above query should look like this:
