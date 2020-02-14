@@ -2,7 +2,7 @@ FROM node
 
 WORKDIR /usr/src/app
 
-ADD package.json yarn.lock tsconfig.json ./
+ADD package.json yarn.lock ./
 RUN yarn install
 
 EXPOSE 4000
