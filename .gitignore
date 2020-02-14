@@ -38,3 +38,6 @@ jspm_packages
 
 # sequelize-auto generated models
 models
+
+# sequelize-auto generated models
+**/*.zip

@@ -1,0 +1,15 @@
+{
+  "name": "graphql_aws_pricing_api",
+  "version": "0.0.1",
+  "description": "GraphQL API for AWS Pricing Data",
+  "main": "server.js",
+  "repository": "https://github.com/Bjorn248/graphql_aws_pricing_api",
+  "author": "Bjorn Stange",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^3.1.0",
+    "graphql": "^14.5.8",
+    "mysql": "^2.17.1",
+    "promise-mysql": "^3.0.0"
+  }
+}

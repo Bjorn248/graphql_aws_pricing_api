@@ -1,4 +1,3 @@
-var express = require('express');
 var async = require('async');
 var mysql      = require('mysql');
 var mysqlPromise      = require('promise-mysql');
@@ -8,7 +7,6 @@ var GraphQLString = graphql.GraphQLString;
 var GraphQLSchema = graphql.GraphQLSchema;
 var GraphQLList = graphql.GraphQLList;
 graphql = graphql.graphql;
-var http = require('http');
 
 exports.handler = (event, context, lambdaCallback) => {
 
@@ -215,6 +213,7 @@ exports.handler = (event, context, lambdaCallback) => {
                 headers: {},
                 body: JSON.stringify(result)
             };
+            console.log(JSON.stringify(response));
             lambdaCallback(null, response);
         })
         .catch(err => {
