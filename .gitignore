@@ -41,3 +41,5 @@ models
 
 # sequelize-auto generated models
 **/*.zip
+
+.DS_Store

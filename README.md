@@ -92,7 +92,7 @@ The response for the above query should look like this:
 
 Here's a working curl you can use to test the above request query
 ```
-curl -H "Content-Type: application/json" -X POST -d '{"query":"{ t2_xlarge_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.xlarge\", OS:\"Linux\", Tenancy:\"Shared\", PreInstalledSW:\"NA\") {PricePerUnit Unit Currency} t2_medium_Shared: AmazonEC2(Location:\"US West (N. California)\", TermType:\"OnDemand\", InstanceType:\"t2.medium\", OS:\"Linux\", Tenancy:\"Shared\", PreInstalledSW:\"NA\") {PricePerUnit Unit Currency}}","variables":"","operationName":""}' https://fvaexi95f8.execute-api.us-east-1.amazonaws.com/Dev/graphql/
+curl -H "Content-Type: application/json" -X POST -d '{"query":"{\n  t2_xlarge_Shared: AmazonEC2(TermType:\"OnDemand\", Location:\"US East (N. Virginia)\", OS:\"Linux\", InstanceType:\"t2.xlarge\", Tenancy:\"Shared\", PreInstalledSW:\"NA\",CapacityStatus:\"Used\") {\n    PricePerUnit\n  }\n  t2_medium_Shared: AmazonEC2(TermType:\"OnDemand\", Location:\"US East (N. Virginia)\", OS:\"Linux\", InstanceType:\"t2.medium\", Tenancy:\"Shared\", PreInstalledSW:\"NA\",CapacityStatus:\"Used\") {\n    PricePerUnit\n  }\n}","variables":null}' https://fvaexi95f8.execute-api.us-east-1.amazonaws.com/Dev/graphql/
 ```
 
 # Local Development
