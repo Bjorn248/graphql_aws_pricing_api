@@ -220,6 +220,7 @@ async.waterfall(waterfallTasks, function (err, result) {
       if (Object.prototype.hasOwnProperty.call(GraphQLObjectMap, table)) {
         console.log('<details>')
         console.log('<summary>', table, '</summary>')
+        console.log()
         console.log('Field | Type')
         console.log('----- | ----')
         for (var column in GraphQLObjectMap[table]) {
