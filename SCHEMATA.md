@@ -1,4 +1,29 @@
 <details>
+<summary> A4B </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+UsageType                           | String
+Operation                           | String
+Deployment_Model                    | String
+Deployment_Model_Description        | String
+serviceName                         | String
+</details>
+<details>
 <summary> AWSAmplify </summary>
 Field                               | Type
 -----                               | ----
@@ -196,6 +221,31 @@ LocationType                        | String
 UsageType                           | String
 Operation                           | String
 InsightsType                        | String
+serviceName                         | String
+</details>
+<details>
+<summary> AWSCodeArtifact </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+RelatedTo                           | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+UsageType                           | String
+Operation                           | String
+Pricing_Unit                        | String
 serviceName                         | String
 </details>
 <details>
@@ -439,6 +489,30 @@ ProcessorFeatures                   | String
 serviceName                         | String
 </details>
 <details>
+<summary> AWSDeepRacer </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Description                         | String
+Location                            | String
+LocationType                        | String
+UsageType                           | String
+Operation                           | String
+serviceName                         | String
+</details>
+<details>
 <summary> AWSDeveloperSupport </summary>
 Field                               | Type
 -----                               | ----
@@ -562,6 +636,31 @@ Directory_Size                      | String
 Directory_Type                      | String
 Directory_Type_Description          | String
 Pricing_Unit                        | String
+serviceName                         | String
+</details>
+<details>
+<summary> AWSELB </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+AWSGroup                            | String
+AWSGroupDescription                 | String
+UsageType                           | String
+Operation                           | String
 serviceName                         | String
 </details>
 <details>
@@ -834,6 +933,32 @@ serviceName                         | String
 Tenancy_Support                     | String
 </details>
 <details>
+<summary> AWSGroundStation </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+UsageType                           | String
+Operation                           | String
+Bandwidth                           | String
+GroundStation                       | String
+OnDemand                            | String
+serviceName                         | String
+</details>
+<details>
 <summary> AWSIoT </summary>
 Field                               | Type
 -----                               | ----
@@ -933,6 +1058,30 @@ AWSIoTEvents                        | String
 serviceName                         | String
 </details>
 <details>
+<summary> AWSIoTSiteWise </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+AWSGroup                            | String
+UsageType                           | String
+Operation                           | String
+serviceName                         | String
+</details>
+<details>
 <summary> AWSIoTThingsGraph </summary>
 Field                               | Type
 -----                               | ----
@@ -1009,6 +1158,34 @@ ToLocationType                      | String
 UsageType                           | String
 Operation                           | String
 Flow_Type                           | String
+serviceName                         | String
+</details>
+<details>
+<summary> AWSOutposts </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+CurrentGeneration                   | String
+UsageType                           | String
+Operation                           | String
+Country                             | String
+Outposts_Unit                       | String
+Payment_Option                      | String
+Payment_Term                        | String
 serviceName                         | String
 </details>
 <details>
@@ -1114,7 +1291,6 @@ Finding_Source                      | String
 Finding_Storage                     | String
 serviceName                         | String
 Standard_Group                      | String
-Standard_Source                     | String
 Standard_Storage                    | String
 </details>
 <details>
@@ -1138,6 +1314,7 @@ Location                            | String
 LocationType                        | String
 UsageType                           | String
 Operation                           | String
+serviceName                         | String
 With_Active_Users                   | String
 </details>
 <details>
@@ -1430,6 +1607,33 @@ UsageType                           | String
 operation                           | String
 </details>
 <details>
+<summary> AmazonA2I </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+UsageType                           | String
+Operation                           | String
+Integrating_API                     | String
+Integrating_Feature                 | String
+Integrating_Service                 | String
+serviceName                         | String
+Workforce_Type                      | String
+</details>
+<details>
 <summary> AmazonApiGateway </summary>
 Field                               | Type
 -----                               | ----
@@ -1511,6 +1715,34 @@ UsageType                           | String
 Operation                           | String
 Free_Query_Types                    | String
 serviceName                         | String
+</details>
+<details>
+<summary> AmazonBraket </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+RelatedTo                           | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+UsageType                           | String
+Operation                           | String
+DeviceName                          | String
+ProductType                         | String
+Provider                            | String
+serviceName                         | String
+Version                             | String
 </details>
 <details>
 <summary> AmazonChime </summary>
@@ -1634,7 +1866,9 @@ Location                            | String
 LocationType                        | String
 UsageType                           | String
 Operation                           | String
+CallType                            | String
 FromCountry                         | String
+messagetype                         | String
 NumberType                          | String
 serviceName                         | String
 ToCountry                           | String
@@ -1752,6 +1986,7 @@ AWSGroupDescription                 | String
 UsageType                           | String
 Operation                           | String
 Alarm_Type                          | String
+Logs_Destination                    | String
 serviceName                         | String
 Version                             | String
 </details>
@@ -1852,6 +2087,30 @@ Memory                              | String
 NetworkPerformance                  | String
 UsageType                           | String
 Operation                           | String
+serviceName                         | String
+</details>
+<details>
+<summary> AmazonDetective </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+UsageType                           | String
+Operation                           | String
+Data_Type                           | String
 serviceName                         | String
 </details>
 <details>
@@ -1999,6 +2258,7 @@ InstanceCapacity8xLarge             | String
 Instance_Capacity__9xlarge          | String
 InstanceCapacityLarge               | String
 InstanceCapacityMedium              | String
+Instance_Capacity__metal            | String
 InstanceCapacityxLarge              | String
 instanceSKU                         | String
 IntelAVXAvailable                   | String
@@ -2133,8 +2393,11 @@ ProductFamily                       | String
 ServiceCode                         | String
 Location                            | String
 LocationType                        | String
+Tenancy                             | String
 UsageType                           | String
 Operation                           | String
+CPUType                             | String
+MemoryType                          | String
 serviceName                         | String
 TierType                            | String
 </details>
@@ -2230,6 +2493,7 @@ Cache_Engine                        | String
 StorageMedia                        | String
 AWSGroup                            | String
 AWSGroupDescription                 | String
+TransferType                        | String
 UsageType                           | String
 Operation                           | String
 serviceName                         | String
@@ -2255,10 +2519,12 @@ Location                            | String
 LocationType                        | String
 UsageType                           | String
 Operation                           | String
+Cache_Type                          | String
 Deployment_option                   | String
 File_system_type                    | String
 serviceName                         | String
 Storage_type                        | String
+Throughput_capacity                 | String
 </details>
 <details>
 <summary> AmazonForecast </summary>
@@ -2308,6 +2574,8 @@ InstanceType                        | String
 CurrentGeneration                   | String
 vCPU                                | String
 OS                                  | String
+AWSGroup                            | String
+AWSGroupDescription                 | String
 UsageType                           | String
 Operation                           | String
 ECU                                 | String
@@ -2367,6 +2635,57 @@ LocationType                        | String
 AWSGroup                            | String
 UsageType                           | String
 Operation                           | String
+serviceName                         | String
+</details>
+<details>
+<summary> AmazonHoneycode </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+UsageType                           | String
+Operation                           | String
+serviceName                         | String
+Tier                                | String
+Usage_Tier                          | String
+</details>
+<details>
+<summary> AmazonIVS </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+TransferType                        | String
+UsageType                           | String
+Operation                           | String
+Input_Type                          | String
+Output_Type                         | String
 serviceName                         | String
 </details>
 <details>
@@ -2604,6 +2923,8 @@ EndingRange                         | String
 Unit                                | String
 PricePerUnit                        | String
 Currency                            | String
+RelatedTo                           | String
+ProductFamily                       | String
 ServiceCode                         | String
 Location                            | String
 LocationType                        | String
@@ -2717,6 +3038,7 @@ ProductFamily                       | String
 ServiceCode                         | String
 Location                            | String
 LocationType                        | String
+AWSGroup                            | String
 UsageType                           | String
 Operation                           | String
 Activity_Type                       | String
@@ -2802,6 +3124,30 @@ DedicatedEBSThroughput              | String
 EnhancedNetworkingSupported         | String
 NormSizeFactor                      | String
 ProcessorFeatures                   | String
+serviceName                         | String
+</details>
+<details>
+<summary> AmazonPersonalize </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+RelatedTo                           | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+AWSGroupDescription                 | String
+UsageType                           | String
+Operation                           | String
 serviceName                         | String
 </details>
 <details>
@@ -3053,6 +3399,7 @@ AWSGroup                            | String
 AWSGroupDescription                 | String
 UsageType                           | String
 Operation                           | String
+Pricing_Unit                        | String
 serviceName                         | String
 </details>
 <details>
@@ -3230,8 +3577,12 @@ ServiceCode                         | String
 Location                            | String
 LocationType                        | String
 InstanceType                        | String
+CurrentGeneration                   | String
+ClockSpeed                          | String
 Memory                              | String
+Storage                             | String
 NetworkPerformance                  | String
+ProcessorArchitecture               | String
 VolumeType                          | String
 MaxThroughputPerVolume              | String
 AWSGroup                            | String
@@ -3239,8 +3590,11 @@ AWSGroupDescription                 | String
 UsageType                           | String
 Operation                           | String
 Automatic_Label                     | String
+Component                           | String
+Compute_Type                        | String
 GPU                                 | String
 GPU_Memory                          | String
+Instance_Name                       | String
 Integrating_API                     | String
 Integrating_Feature                 | String
 Integrating_Service                 | String
@@ -3510,6 +3864,8 @@ AWSGroupDescription                 | String
 UsageType                           | String
 Operation                           | String
 Bundle                              | String
+Bundle_Description                  | String
+Bundle_Group                        | String
 License                             | String
 Resource_Type                       | String
 rootVolume                          | String
@@ -3517,6 +3873,30 @@ Running_Mode                        | String
 serviceName                         | String
 Software_Included                   | String
 userVolume                          | String
+</details>
+<details>
+<summary> AppFlow </summary>
+Field                               | Type
+-----                               | ----
+SKU                                 | String
+OfferTermCode                       | String
+RateCode                            | String
+TermType                            | String
+PriceDescription                    | String
+EffectiveDate                       | String
+StartingRange                       | String
+EndingRange                         | String
+Unit                                | String
+PricePerUnit                        | String
+Currency                            | String
+ProductFamily                       | String
+ServiceCode                         | String
+Location                            | String
+LocationType                        | String
+UsageType                           | String
+Operation                           | String
+Flow                                | String
+serviceName                         | String
 </details>
 <details>
 <summary> CloudHSM </summary>
@@ -3588,6 +3968,7 @@ EndingRange                         | String
 Unit                                | String
 PricePerUnit                        | String
 Currency                            | String
+RelatedTo                           | String
 ProductFamily                       | String
 ServiceCode                         | String
 Location                            | String

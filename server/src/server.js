@@ -215,7 +215,7 @@ async.waterfall(waterfallTasks, function (err, result) {
     graphiql: process.env.NODE_ENV !== 'production'
   }))
   // For generating the Markdown tables to be included in the README
-  if (process.env.GENERATE_MARKDOWN_DOCS === 1) {
+  if (process.env.GENERATE_MARKDOWN_DOCS == 1) {
     for (var table in GraphQLObjectMap) {
       if (Object.prototype.hasOwnProperty.call(GraphQLObjectMap, table)) {
         console.log('<details>')
