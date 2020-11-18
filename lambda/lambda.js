@@ -115,6 +115,7 @@ exports.handler = (event, context, lambdaCallback) => {
     }
 
     function getColumns(pool, GraphQLObjectMap, callback) {
+        var graphQLFieldRegex = new RegExp("^[_a-zA-Z][_a-zA-Z0-9]*$");
         pool.getConnection(function(err, connection) {
             if (err) {
                 callback(err);
@@ -126,10 +127,20 @@ exports.handler = (event, context, lambdaCallback) => {
                     }
                     rows.forEach(function(row) {
                         var fieldName = row.Field;
-                        GraphQLObjectMap[tableName][fieldName] = {
-                            type: GraphQLString,
-                            resolve: generateResolveFunction(fieldName)
-                        };
+                        if(graphQLFieldRegex.test(fieldName)) {
+                            var regex_mapping = null
+                            GraphQLObjectMap[tableName][fieldName] = {
+                                type: GraphQLString,
+                                resolve: generateResolveFunction(fieldName, regex_mapping)
+                            }
+                        } else {
+                            var regex_mapping = fieldName
+                            fieldName = "mapped_" + regex_mapping
+                            GraphQLObjectMap[tableName][fieldName] = {
+                                type: GraphQLString,
+                                resolve: generateResolveFunction(fieldName, regex_mapping)
+                            }
+                        }
                     });
                     callb(err);
                 });
@@ -161,37 +172,37 @@ exports.handler = (event, context, lambdaCallback) => {
     var waterfallTasks = [];
 
     waterfallTasks.push(
-            function(cb) {
-                getTables(pool, GraphQLObjectMap, function(err) {
-                    if (err) {
-                        console.error("Error getting tables from mysql");
-                    }
-                    cb(err, pool, GraphQLObjectMap);
-                });
-            }
-            );
+        function(cb) {
+            getTables(pool, GraphQLObjectMap, function(err) {
+                if (err) {
+                    console.error("Error getting tables from mysql");
+                }
+                cb(err, pool, GraphQLObjectMap);
+            });
+        }
+    );
 
     waterfallTasks.push(
-            function(pool, GraphQLObjectMap, cb) {
-                getColumns(pool, GraphQLObjectMap, function(err, GraphQLObjectMap) {
-                    if (err) {
-                        console.error("Error getting tables from mysql");
-                    }
-                    cb(err, GraphQLObjectMap);
-                });
-            }
-            );
+        function(pool, GraphQLObjectMap, cb) {
+            getColumns(pool, GraphQLObjectMap, function(err, GraphQLObjectMap) {
+                if (err) {
+                    console.error("Error getting tables from mysql");
+                }
+                cb(err, GraphQLObjectMap);
+            });
+        }
+    );
 
     waterfallTasks.push(
-            function(GraphQLObjectMap, cb) {
-                generateQueryMap(GraphQLObjectMap, GraphQLQueryMap, function(err, GraphQLObjectMap, GraphQLQueryMap) {
-                    if (err) {
-                        console.error("Error getting tables from mysql");
-                    }
-                    cb(err, GraphQLObjectMap, GraphQLQueryMap);
-                });
-            }
-            );
+        function(GraphQLObjectMap, cb) {
+            generateQueryMap(GraphQLObjectMap, GraphQLQueryMap, function(err, GraphQLObjectMap, GraphQLQueryMap) {
+                if (err) {
+                    console.error("Error getting tables from mysql");
+                }
+                cb(err, GraphQLObjectMap, GraphQLQueryMap);
+            });
+        }
+    );
 
     async.waterfall(waterfallTasks, function (err, result) {
         pool.end();
@@ -216,10 +227,10 @@ exports.handler = (event, context, lambdaCallback) => {
             console.log(JSON.stringify(response));
             lambdaCallback(null, response);
         })
-        .catch(err => {
-            console.error(err);
-            lambdaCallback("Something went wrong");
-        });
+            .catch(err => {
+                console.error(err);
+                lambdaCallback("Something went wrong");
+            });
 
     });
 };

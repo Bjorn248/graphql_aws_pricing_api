@@ -35,9 +35,20 @@ var poolPromise = mysqlPromise.createPool({
   database: mariaDBName
 })
 
-function generateResolveFunction (fieldName) {
-  return (parentValue, args, request) => {
-    return parentValue[fieldName]
+//TODO Fix issue with IngestionServiceSnowball, which contains
+// column titles that are not valid GraphQL Field Names. They need to be created in the GraphQL
+// schema with modified field names e.g. "mapped_" but then linked back to the original in the database
+// as part of the resolve function. The current state of the code gets EC2 queries back up, which is
+// my main concern.
+function generateResolveFunction (fieldName, regex_mapping) {
+  if(regex_mapping) {
+      return (parentValue, args, request) => {
+        return parentValue[regex_mapping]
+      }
+  } else {
+      return (parentValue, args, request) => {
+        return parentValue[fieldName]
+      }
   }
 }
 
@@ -117,6 +128,7 @@ function getTables (pool, GraphQLObjectMap, callback) {
 }
 
 function getColumns (pool, GraphQLObjectMap, callback) {
+  var graphQLFieldRegex = new RegExp("^[_a-zA-Z][_a-zA-Z0-9]*$");
   pool.getConnection(function (err, connection) {
     if (err) {
       callback(err)
@@ -128,9 +140,19 @@ function getColumns (pool, GraphQLObjectMap, callback) {
         }
         rows.forEach(function (row) {
           var fieldName = row.Field
-          GraphQLObjectMap[tableName][fieldName] = {
-            type: GraphQLString,
-            resolve: generateResolveFunction(fieldName)
+          if(graphQLFieldRegex.test(fieldName)) {
+            var regex_mapping = null
+            GraphQLObjectMap[tableName][fieldName] = {
+              type: GraphQLString,
+              resolve: generateResolveFunction(fieldName, regex_mapping)
+            }
+          } else {
+            var regex_mapping = fieldName
+            fieldName = "mapped_" + regex_mapping
+            GraphQLObjectMap[tableName][fieldName] = {
+              type: GraphQLString,
+              resolve: generateResolveFunction(fieldName, regex_mapping)
+            }
           }
         })
         callb(err)
