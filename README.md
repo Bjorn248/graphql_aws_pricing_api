@@ -1,3 +1,5 @@
+[![Assertible status](https://assertible.com/apis/5d04f34f-6bc2-4862-864b-4ad901c0ca70/status?api_token=hhNqRr4ySePrC4ik)](https://assertible.com/dashboard#/services/5d04f34f-6bc2-4862-864b-4ad901c0ca70/results)
+
 # graphql_aws_pricing_api
 AWS Pricing API. The idea was to use this to power terraform-cashier (my next project).
 
