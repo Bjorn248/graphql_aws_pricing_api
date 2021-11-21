@@ -24,7 +24,11 @@ var pool = mysql.createPool({
   host: mariaDBHost,
   user: mariaDBUser,
   password: mariaDBPass,
-  database: mariaDBName
+  database: mariaDBName,
+  // comment out ssl option for local development
+  ssl: {
+    rejectUnauthorized: true
+  }
 })
 
 var poolPromise = mysqlPromise.createPool({
@@ -32,7 +36,11 @@ var poolPromise = mysqlPromise.createPool({
   host: mariaDBHost,
   user: mariaDBUser,
   password: mariaDBPass,
-  database: mariaDBName
+  database: mariaDBName,
+  // comment out ssl option for local development
+  ssl: {
+    rejectUnauthorized: true
+  }
 })
 
 //TODO Fix issue with IngestionServiceSnowball, which contains

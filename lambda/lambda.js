@@ -22,7 +22,11 @@ exports.handler = (event, context, lambdaCallback) => {
         host            : mariaDBHost,
         user            : mariaDBUser,
         password        : mariaDBPass,
-        database        : mariaDBName
+        database        : mariaDBName,
+        // comment out ssl option for local development
+        ssl: {
+          rejectUnauthorized: true
+        }
     });
 
     var poolPromise = mysqlPromise.createPool({
@@ -30,7 +34,11 @@ exports.handler = (event, context, lambdaCallback) => {
         host            : mariaDBHost,
         user            : mariaDBUser,
         password        : mariaDBPass,
-        database        : mariaDBName
+        database        : mariaDBName,
+        // comment out ssl option for local development
+        ssl: {
+          rejectUnauthorized: true
+        }
     });
 
     function generateResolveFunction(fieldName) {
