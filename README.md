@@ -116,9 +116,9 @@ MARIADB_DB | The DB name to connect to (e.g. aws_prices)
 To run this API locally, make sure you have all environment variables set and have
 a target MariaDB database running.
 
-To install any required dependencies please run `yarn install`
+To install any required dependencies please run `npm install`
 
-Then, simply start the application using `yarn start`
+Then, simply start the application using `npm start`
 
 ## GraphQL Data Types
 See [SCHEMATA.md](./SCHEMATA.md)
