@@ -17,5 +17,9 @@
   "scripts": {
     "start": "node --max-old-space-size=4096 src/server.js"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines" : {
+    "npm" : ">=8.0.0",
+    "node" : ">=16.0.0"
+  }
 }

@@ -2,8 +2,8 @@ FROM node
 
 WORKDIR /usr/src/app
 
-ADD package.json yarn.lock ./
-RUN yarn install
+ADD package.json package-lock.json ./
+RUN npm i
 
 EXPOSE 4000
 
