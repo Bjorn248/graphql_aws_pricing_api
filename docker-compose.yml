@@ -1,7 +1,7 @@
 version: '3'
 services:
     db:
-        image: mariadb
+        image: docker.io/library/mariadb
         ports:
         - "3306:3306"
         environment:
@@ -16,12 +16,14 @@ services:
         environment:
             MARIADB_USER: root
             MARIADB_HOST: db
-        command: ["/scripts/wait-for", "db:3306", "--", "/scripts/local_pricing_import.py"]
+        command: ["/scripts/local_pricing_import.py"]
     server:
         build: ./server
         ports:
         - "4000:4000"
         depends_on:
+        - db
+        links:
         - db
         volumes:
         - ./server/src/:/usr/src/app/src

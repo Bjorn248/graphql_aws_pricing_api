@@ -1,6 +1,6 @@
 {
   "name": "graphql_aws_pricing_api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "GraphQL API for AWS Pricing Data",
   "main": "server.js",
   "repository": "https://github.com/Bjorn248/graphql_aws_pricing_api",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {},
   "engines" : {
-    "npm" : ">=8.0.0",
-    "node" : ">=16.0.0"
+    "npm" : ">=9.0.0",
+    "node" : ">=18.0.0"
   }
 }
