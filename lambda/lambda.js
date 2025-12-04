@@ -8,7 +8,7 @@ var GraphQLSchema = graphql.GraphQLSchema;
 var GraphQLList = graphql.GraphQLList;
 graphql = graphql.graphql;
 
-exports.handler = (event, context, lambdaCallback) => {
+exports.handler = async (event, context) => {
 
     // TODO Figure out why this uses such an insane amount of memory...
 
@@ -204,33 +204,33 @@ exports.handler = (event, context, lambdaCallback) => {
         }
     );
 
-    async.waterfall(waterfallTasks, function (err, result) {
-        pool.end();
-        var Query = new GraphQLObjectType({
-            name: 'Query',
-            description: 'Root query object',
-            fields: generateRootQueryObject(GraphQLObjectMap)
-        });
-
-        var Schema = new GraphQLSchema({
-            query: Query
-        });
-
-        graphql(Schema, JSON.parse(event.body).query).then(result => {
-
-            poolPromise.end();
-            var response = {
-                statusCode: 200,
-                headers: {},
-                body: JSON.stringify(result)
-            };
-            console.log(JSON.stringify(response));
-            lambdaCallback(null, response);
-        })
-            .catch(err => {
-                console.error(err);
-                lambdaCallback("Something went wrong");
+    return new Promise((resolve, reject) => {
+        async.waterfall(waterfallTasks, function (err, result) {
+            pool.end();
+            var Query = new GraphQLObjectType({
+                name: 'Query',
+                description: 'Root query object',
+                fields: generateRootQueryObject(GraphQLObjectMap)
             });
 
+            var Schema = new GraphQLSchema({
+                query: Query
+            });
+
+            graphql(Schema, JSON.parse(event.body).query).then(result => {
+                var response = {
+                    statusCode: 200,
+                    headers: {},
+                    body: JSON.stringify(result)
+                };
+                console.log(JSON.stringify(response));
+                resolve(response);
+            })
+                .catch(err => {
+                    console.error(err);
+                    reject(new Error("Something went wrong"));
+                });
+
+        });
     });
 };
