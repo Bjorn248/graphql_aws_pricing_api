@@ -218,6 +218,8 @@ exports.handler = async (event, context) => {
             });
 
             graphql(Schema, JSON.parse(event.body).query).then(result => {
+
+                poolPromise.end();
                 var response = {
                     statusCode: 200,
                     headers: {},
