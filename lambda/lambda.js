@@ -1,12 +1,12 @@
 var async = require('async');
-var mysql      = require('mysql');
-var mysqlPromise      = require('promise-mysql');
-var graphql = require('graphql');
-var GraphQLObjectType = graphql.GraphQLObjectType;
-var GraphQLString = graphql.GraphQLString;
-var GraphQLSchema = graphql.GraphQLSchema;
-var GraphQLList = graphql.GraphQLList;
-graphql = graphql.graphql;
+var mysql = require('mysql2');
+var mysqlPromise = require('mysql2/promise');
+var graphqlLib = require('graphql');
+var GraphQLObjectType = graphqlLib.GraphQLObjectType;
+var GraphQLString = graphqlLib.GraphQLString;
+var GraphQLSchema = graphqlLib.GraphQLSchema;
+var GraphQLList = graphqlLib.GraphQLList;
+var graphql = graphqlLib.graphql;
 
 exports.handler = async (event, context) => {
 
@@ -33,10 +33,16 @@ exports.handler = async (event, context) => {
         database        : mariaDBName
     });
 
-    function generateResolveFunction(fieldName) {
-        return (parentValue, args, request) => {
-            return parentValue[fieldName];
-        };
+    function generateResolveFunction(fieldName, regex_mapping) {
+        if(regex_mapping) {
+            return (parentValue, args, request) => {
+                return parentValue[regex_mapping];
+            };
+        } else {
+            return (parentValue, args, request) => {
+                return parentValue[fieldName];
+            };
+        }
     }
 
     function generateQueryFunction(poolPromise, tableName) {
@@ -67,7 +73,7 @@ exports.handler = async (event, context) => {
             queryIdentifiers.unshift(selectionColumns);
             queryString = mysql.format(queryString, queryIdentifiers);
             console.log(queryString);
-            return poolPromise.query(queryString);
+            return poolPromise.query(queryString).then(([rows]) => rows);
         };
     }
 
@@ -167,8 +173,6 @@ exports.handler = async (event, context) => {
     var GraphQLObjectMap = {};
     var GraphQLQueryMap = {};
 
-    waterfallTasks = [];
-
     var waterfallTasks = [];
 
     waterfallTasks.push(
@@ -217,7 +221,7 @@ exports.handler = async (event, context) => {
                 query: Query
             });
 
-            graphql(Schema, JSON.parse(event.body).query).then(result => {
+            graphql({ schema: Schema, source: JSON.parse(event.body).query }).then(result => {
 
                 poolPromise.end();
                 var response = {

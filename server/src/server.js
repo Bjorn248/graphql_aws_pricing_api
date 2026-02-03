@@ -1,8 +1,9 @@
 var express = require('express')
 var async = require('async')
-var mysql = require('mysql')
-var mysqlPromise = require('promise-mysql')
-var graphqlHTTP = require('express-graphql')
+var mysql = require('mysql2')
+var mysqlPromise = require('mysql2/promise')
+var { createHandler } = require('graphql-http/lib/use/express')
+var { ruruHTML } = require('ruru/server')
 var {
   GraphQLObjectType,
   GraphQLString,
@@ -80,7 +81,7 @@ function generateQueryFunction (poolPromise, tableName) {
     queryIdentifiers.unshift(selectionColumns)
     queryString = mysql.format(queryString, queryIdentifiers)
     console.log(queryString)
-    return poolPromise.query(queryString)
+    return poolPromise.query(queryString).then(([rows]) => rows)
   }
 }
 
@@ -231,11 +232,16 @@ async.waterfall(waterfallTasks, function (err, result) {
     query: Query
   })
 
-  app.use('/graphql', graphqlHTTP({
-    schema: Schema,
-    pretty: true,
-    graphiql: process.env.NODE_ENV !== 'production'
-  }))
+  // Serve GraphiQL IDE on GET requests (unless in production)
+  if (process.env.NODE_ENV !== 'production') {
+    app.get('/graphql', (req, res) => {
+      res.type('html').send(ruruHTML({ endpoint: '/graphql' }))
+    })
+  }
+
+  // Serve GraphQL API
+  app.all('/graphql', createHandler({ schema: Schema }))
+
   // For generating the Markdown tables to be included in the README
   if (process.env.GENERATE_MARKDOWN_DOCS == 1) {
     for (var table in GraphQLObjectMap) {
