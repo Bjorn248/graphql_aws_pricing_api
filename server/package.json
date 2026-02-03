@@ -7,19 +7,19 @@
   "author": "Bjorn Stange",
   "license": "MIT",
   "dependencies": {
-    "async": "^3.2.2",
-    "express": "^4.22.1",
-    "express-graphql": "^0.9.0",
-    "graphql": "^14.5.8",
-    "mysql": "^2.17.1",
-    "promise-mysql": "^3.0.0"
+    "async": "^3.2.6",
+    "express": "^5.1.0",
+    "graphql": "^16.12.0",
+    "graphql-http": "^1.22.0",
+    "mysql2": "^3.12.0",
+    "ruru": "^2.0.0-rc.4"
   },
   "scripts": {
     "start": "node --max-old-space-size=4096 src/server.js"
   },
   "devDependencies": {},
   "engines" : {
-    "npm" : ">=9.0.0",
-    "node" : ">=18.0.0"
+    "npm" : ">=10.0.0",
+    "node" : ">=22.0.0"
   }
 }
