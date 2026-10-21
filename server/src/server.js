@@ -53,11 +53,15 @@ function generateResolveFunction (fieldName, regex_mapping) {
   }
 }
 
-function generateQueryFunction (poolPromise, tableName) {
+function generateQueryFunction (poolPromise, tableName, allowedColumns) {
   return (parentValue, args, request, query) => {
     var selectionColumns = []
     query.fieldNodes[0].selectionSet.selections.forEach(function (selection) {
-      selectionColumns.push(selection.name.value)
+      var columnName = selection.name.value
+      if (!Object.prototype.hasOwnProperty.call(allowedColumns, columnName)) {
+        throw new Error('Invalid field requested: ' + columnName)
+      }
+      selectionColumns.push(columnName)
     })
     var queryString
     if (typeof selectionColumns[0] === 'undefined') {
@@ -70,6 +74,9 @@ function generateQueryFunction (poolPromise, tableName) {
     if (Object.keys(args).length !== 0) {
       queryString += ' WHERE '
       Object.keys(args).forEach(function (arg, index) {
+        if (!Object.prototype.hasOwnProperty.call(allowedColumns, arg)) {
+          throw new Error('Invalid filter argument: ' + arg)
+        }
         if (index > 0) {
           queryString += ' AND '
         }
